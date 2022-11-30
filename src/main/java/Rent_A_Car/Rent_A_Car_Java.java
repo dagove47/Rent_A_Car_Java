@@ -28,6 +28,7 @@ public class Rent_A_Car_Java {
             switch(addCasa) {
                 case 0:
 //  ********************** VEHICULO ***********************
+                    
                     String placa = JOptionPane.showInputDialog(
                             "Digite placa:");
                     String marca = JOptionPane.showInputDialog(
@@ -53,22 +54,22 @@ public class Rent_A_Car_Java {
                     
 //  ********************** CLIENTE ***********************
                     
-//                    int cedula = Integer.parseInt(JOptionPane.showInputDialog(
-//                            "Digite cedula del cliente:"));
-//                    String nombre = JOptionPane.showInputDialog(
-//                            "Digite el Nombre del cliente:");
-//                    String nacimiento = JOptionPane.showInputDialog(
-//                            "Digite nacimiento cliente:");
-//                    String email = JOptionPane.showInputDialog(
-//                            "Digite email del cliente:");
-//                    String categoria = JOptionPane.showInputDialog(
-//                            "Digite categoria del cliente:");
+                    int cedula = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Digite cedula del cliente:"));
+                    String nombre = JOptionPane.showInputDialog(
+                            "Digite el Nombre del cliente:");
+                    String nacimiento = JOptionPane.showInputDialog(
+                            "Digite nacimiento cliente:");
+                    String email = JOptionPane.showInputDialog(
+                            "Digite email del cliente:");
+                    String categoria = JOptionPane.showInputDialog(
+                            "Digite categoria del cliente:");
                     
                     listaVehiculo.inserta(new Vehiculo(placa, marca, modelo, 
                             anno, color, cilindrada, combustible, pasajeros, 
                             precioDia, extras, estado));
-//                    listaCliente.inserta(new Cliente(cedula, nombre, nacimiento, 
-//                            email, categoria));
+                    listaCliente.inserta(new Cliente(cedula, nombre, nacimiento, 
+                            email, categoria));
                     break;
                 default:
                     loop = 1;

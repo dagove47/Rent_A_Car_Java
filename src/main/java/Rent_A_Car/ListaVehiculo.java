@@ -134,10 +134,10 @@ public class ListaVehiculo {
     @Override
     public String toString(){
         NodoV aux = cabeza;
-        String s="Lista: ";
-        while(aux!=null){
-            s+=aux+ "\n";
-            aux=aux.getNext();
+        String s="";
+        while(aux != null){
+            s += aux + "\n";
+            aux = aux.getNext();
         }
         return s;
     }

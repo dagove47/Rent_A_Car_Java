@@ -14,7 +14,7 @@ public class NodoC {
     
     @Override
     public String toString(){
-        return "NodoC{"+"dato="+dato+'}';
+        return dato.toString();
     }
     
     public NodoC(Cliente dato){

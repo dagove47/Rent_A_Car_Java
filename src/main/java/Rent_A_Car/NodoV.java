@@ -14,7 +14,7 @@ public class NodoV {
     
     @Override
     public String toString(){
-        return "NodoV{"+"dato="+dato+'}';
+        return dato.toString();
     }
     
     public NodoV(Vehiculo dato){
