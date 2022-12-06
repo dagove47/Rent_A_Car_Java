@@ -28,7 +28,6 @@ public class Rent_A_Car_Java {
             switch(addCasa) {
                 case 0:
 //  ********************** VEHICULO ***********************
-                    
                     String placa = JOptionPane.showInputDialog(
                             "Digite placa:");
                     String marca = JOptionPane.showInputDialog(
@@ -53,7 +52,7 @@ public class Rent_A_Car_Java {
                             "Digite estado vehiculo:");
                     
 //  ********************** CLIENTE ***********************
-                    
+//                    
                     int cedula = Integer.parseInt(JOptionPane.showInputDialog(
                             "Digite cedula del cliente:"));
                     String nombre = JOptionPane.showInputDialog(
@@ -70,6 +69,9 @@ public class Rent_A_Car_Java {
                             precioDia, extras, estado));
                     listaCliente.inserta(new Cliente(cedula, nombre, nacimiento, 
                             email, categoria));
+                    
+                    listaVehiculo.elimina("ABC123");
+                    
                     break;
                 default:
                     loop = 1;

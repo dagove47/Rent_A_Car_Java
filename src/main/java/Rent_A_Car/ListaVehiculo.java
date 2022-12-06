@@ -23,7 +23,7 @@ public class ListaVehiculo {
         }else{
            NodoV aux = cabeza;
            while (aux.getNext() != null 
-//                   && aux.getNext().getDato().getPlaca() < p.getPlaca()
+//                   && !(aux.getNext().getDato().getPlaca()).equals(p.getPlaca())
            ){
                aux=aux.getNext();
            }
@@ -44,7 +44,7 @@ public class ListaVehiculo {
 
             //Mientras no se acabe la lista y el elemento
             //de la lista sea menor que el buscado
-            while (aux != null && (aux.getDato().getPlaca().equals(placa))){
+            while (aux != null && !(aux.getDato().getPlaca().equals(placa))){
                 aux = aux.getNext () ;//avanzo en la lista
             }
 
@@ -62,7 +62,7 @@ public class ListaVehiculo {
             NodoV aux = cabeza; //utilizo aux como indice
             //Mientras no se acabe la lista y el elemento
             //de la lista sea menor que el buscado
-            while (aux != null && (aux.getDato().getPlaca().equals(p.getPlaca()))) {
+            while (aux != null && !(aux.getDato().getPlaca().equals(p.getPlaca()))) {
                 aux = aux. getNext (); //avanzo en la lista
             }
             // Si lo encuentra hago el cambio
@@ -84,7 +84,7 @@ public class ListaVehiculo {
     public void elimina (String placa) {
         //Si un Vehiculo tiene la placa, lo elimina
         if (cabeza != null) { //Si hay algo en la lista buscaré
-            if (cabeza.getDato().getPlaca().equals(placa)) 
+            if ((cabeza.getDato().getPlaca()).equals(placa)) 
             {
                 cabeza = cabeza.getNext();
             } 
@@ -92,16 +92,17 @@ public class ListaVehiculo {
                 NodoV aux = cabeza; //utilizo aux como indice
                 //Mientras no se acabe la lista y el elemento
                 //de la lista sea menor que el buscado
-                while (aux.getNext() != null &&
-                    (aux.getNext().getDato().getPlaca().equals(placa))) {
-                    aux = aux.getNext () ;
+                while ((aux.getNext() != null) && (!(aux.getNext().getDato().getPlaca()).equals(placa))) {
+                    System.out.println(aux.getNext().getDato().getPlaca());
+                    
+                    aux = aux.getNext();
+                    
                 }
                 //avanzo en la lista
             
                 // si es el de adelante lo borro
-                if (aux.getNext() != null &&
-                (aux.getNext().getDato().getPlaca().equals(placa))) {
-                    aux.setNext (aux.getNext().getNext()); //cambio las referencias
+                if ((aux.getNext() != null) && ((aux.getNext().getDato().getPlaca()).equals(placa))) {
+                    aux.setNext(aux.getNext().getNext()); //cambio las referencias
                 }
             }
         }
@@ -117,7 +118,7 @@ public class ListaVehiculo {
                 NodoV aux = cabeza; //utilizo aux como indice
                 //Mientras no se acabe la lista y el elemento
                 //de la lista sea menor que el buscado
-                while (aux.getNext() != null && (aux.getNext().getDato().getPlaca().equals(placa))){
+                while (aux.getNext() != null && !(aux.getNext().getDato().getPlaca().equals(placa))){
                     aux = aux.getNext () ;
                     //avanzo en la lista
                 }
