@@ -6,6 +6,7 @@
 package Rent_A_Car;
 
 import javax.swing.JOptionPane;
+import java.nio.channels.Pipe;
 
 /**
  *
@@ -17,12 +18,14 @@ public class Rent_A_Car_Java {
         
         ListaVehiculo listaVehiculo = new ListaVehiculo();
         ListaCliente listaCliente = new ListaCliente();
+        PilaS listaSolicitudes= new PilaS();
         
         int loop = 0;
         while(loop == 0) {
             int addCasa = JOptionPane.showConfirmDialog(null,
                     "Lista de Vehiculos:\n" + listaVehiculo + "\n\n" +
                     "Lista de Clientes:\n" + listaCliente + "\n" +
+                            "Lista de Solicitudes:\n" + listaSolicitudes.listarPila() + "\n" +
                             "Desea agregar mas a la fila?",
                     "Question",JOptionPane.YES_NO_OPTION);
             switch(addCasa) {
@@ -71,6 +74,15 @@ public class Rent_A_Car_Java {
                             email, categoria));
                     
                     listaVehiculo.elimina("ABC123");
+//**************SOLICITUDALQUILER*******************
+                    //Hay un error en las variables cedula y placa, chocan los datos de una clase con la otra
+                    String placaS= JOptionPane.showInputDialog(
+                            "Digite placa:");
+                    String cedulaS = JOptionPane.showInputDialog(
+                            "Digite cedula:");
+                    String estadoS = JOptionPane.showInputDialog(
+                            "Digite estado:");
+                    listaSolicitudes.push(new Solicitud(placa,cedula, estado));
                     
                     break;
                 default:
