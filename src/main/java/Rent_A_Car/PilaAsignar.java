@@ -1,12 +1,15 @@
 package Rent_A_Car;
-public class PilaS {
-    private NodoS topNodo;
+
+public class PilaAsignar {
+    private NodoA topNodo;
+    
     public boolean vacia(){
         return this.topNodo==null;
     }
+    
     private int largo;
-    public void push(Solicitud solicitud){
-        NodoS newNodo=new NodoS(solicitud);
+    public void push(Asignar solicitud){
+        NodoA newNodo=new NodoA(solicitud);
         if(this.topNodo==null){
             this.topNodo=newNodo;
         }else {
@@ -15,11 +18,12 @@ public class PilaS {
         }
         this.largo++;
     }
+    
     public String listarPila(){
         String listaalquileres="";
         int n=1;
         if (!vacia()) {
-            NodoS aux= this.topNodo;
+            NodoA aux= this.topNodo;
             while(aux != null){
                 listaalquileres += n+"-"+ aux.getAlquileres()+"\n";
                 n++;

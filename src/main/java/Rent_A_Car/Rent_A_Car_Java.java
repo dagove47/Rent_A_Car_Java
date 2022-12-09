@@ -18,14 +18,16 @@ public class Rent_A_Car_Java {
         
         ListaVehiculo listaVehiculo = new ListaVehiculo();
         ListaCliente listaCliente = new ListaCliente();
-        PilaS listaSolicitudes= new PilaS();
+        PilaAsignar listaSolicitudes= new PilaAsignar();
+        ColaSolicitud colaSolicitud = new ColaSolicitud();
         
         int loop = 0;
         while(loop == 0) {
             int addCasa = JOptionPane.showConfirmDialog(null,
                     "Lista de Vehiculos:\n" + listaVehiculo + "\n\n" +
                     "Lista de Clientes:\n" + listaCliente + "\n" +
-                            "Lista de Solicitudes:\n" + listaSolicitudes.listarPila() + "\n" +
+                    "Lista de Solicitudes:\n" + colaSolicitud.toString() + "\n" +
+                    "Lista de Asignar:\n" + listaSolicitudes.listarPila() + "\n" +
                             "Desea agregar mas a la fila?",
                     "Question",JOptionPane.YES_NO_OPTION);
             switch(addCasa) {
@@ -74,16 +76,33 @@ public class Rent_A_Car_Java {
                             email, categoria));
                     
                     listaVehiculo.elimina("ABC123");
-//**************SOLICITUDALQUILER*******************
-                    //Hay un error en las variables cedula y placa, chocan los datos de una clase con la otra
-                    String placaS= JOptionPane.showInputDialog(
-                            "Digite placa:");
-                    String cedulaS = JOptionPane.showInputDialog(
-                            "Digite cedula:");
-                    String estadoS = JOptionPane.showInputDialog(
-                            "Digite estado:");
-                    listaSolicitudes.push(new Solicitud(placa,cedula, estado));
                     
+                    //**************SOLICITUDALQUILER*******************
+                    
+                    int diasAlquiler = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Digite cantidad dias Alquiler:"));
+                    int minimoPasajeros = Integer.parseInt(JOptionPane.showInputDialog(
+                            "Digite minimo de Pasajeros:"));
+                    String marcaS = JOptionPane.showInputDialog(
+                            "Digite preferencia marca:");
+                    String modeloS = JOptionPane.showInputDialog(
+                            "Digite preferencia modelo:");
+                    String annoS = JOptionPane.showInputDialog(
+                            "Digite preferencia anno:");
+                    String extrasS = JOptionPane.showInputDialog(
+                            "Digite extras en particular:");
+                    colaSolicitud.encola(new Solicitud(diasAlquiler, minimoPasajeros, marcaS, modeloS, annoS, extrasS));
+                    
+                    //**************Asignar ALQUILER*******************
+                    String placaA= JOptionPane.showInputDialog(
+                            "Digite placa:");
+                    String cedulaA = JOptionPane.showInputDialog(
+                            "Digite cedula:");
+                    String estadoA = JOptionPane.showInputDialog(
+                            "Digite estado:");
+                    listaSolicitudes.push(new Asignar(placaA,cedulaA, estadoA));
+                    
+                                       
                     break;
                 default:
                     loop = 1;
