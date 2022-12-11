@@ -34,12 +34,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuBg = new javax.swing.JPanel();
         proflieBg = new javax.swing.JPanel();
         proflieIcon = new javax.swing.JLabel();
-        clientText = new javax.swing.JLabel();
-        rentText = new javax.swing.JLabel();
-        carText = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         submenu = new javax.swing.JDesktopPane();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        carText = new javax.swing.JLabel();
+        rentText = new javax.swing.JLabel();
+        clientText = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -101,7 +101,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         proflieBg.setBackground(new java.awt.Color(0, 34, 47));
 
-        proflieIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Proflie_Icon2__1_-removebg-preview.png"))); // NOI18N
+        proflieIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\gblan\\OneDrive - Universidad Fidélitas\\Ufidélitas\\3 Cuatrimestre\\Estructura de Datos\\Proyecto\\Iconos\\Proflie_Icon2__1_-removebg-preview.png")); // NOI18N
         proflieIcon.setText("jLabel1");
 
         javax.swing.GroupLayout proflieBgLayout = new javax.swing.GroupLayout(proflieBg);
@@ -109,17 +109,50 @@ public class MenuPrincipal extends javax.swing.JFrame {
         proflieBgLayout.setHorizontalGroup(
             proflieBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(proflieBgLayout.createSequentialGroup()
-                .addComponent(proflieIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(proflieIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 192, Short.MAX_VALUE))
         );
         proflieBgLayout.setVerticalGroup(
             proflieBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(proflieIcon)
+            .addComponent(proflieIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        javax.swing.GroupLayout menuBgLayout = new javax.swing.GroupLayout(menuBg);
+        menuBg.setLayout(menuBgLayout);
+        menuBgLayout.setHorizontalGroup(
+            menuBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(proflieBg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        menuBgLayout.setVerticalGroup(
+            menuBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuBgLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(proflieBg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(542, Short.MAX_VALUE))
+        );
+
+        bg.add(menuBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 720));
+
+        submenu.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("              Análisis");
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("                 Solicitudes");
+
+        carText.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        carText.setForeground(new java.awt.Color(255, 255, 255));
+        carText.setText("                 Vehículos");
+
+        rentText.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        rentText.setForeground(new java.awt.Color(255, 255, 255));
+        rentText.setText("               Alquiler");
 
         clientText.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         clientText.setForeground(new java.awt.Color(255, 255, 255));
-        clientText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/ClientsIcon (1).png"))); // NOI18N
         clientText.setText("              Clientes");
         clientText.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -127,68 +160,51 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        rentText.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        rentText.setForeground(new java.awt.Color(255, 255, 255));
-        rentText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/RentIcon-removebg-preview.png"))); // NOI18N
-        rentText.setText("               Alquiler");
-
-        carText.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        carText.setForeground(new java.awt.Color(255, 255, 255));
-        carText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/carIcon.png"))); // NOI18N
-        carText.setText("                 Vehículos");
-
-        jLabel1.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/soliIcon-removebg-preview.png"))); // NOI18N
-        jLabel1.setText("                 Solicitudes");
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/graphips__1_-removebg-preview.png"))); // NOI18N
-        jLabel2.setText("              Análisis");
-
-        javax.swing.GroupLayout menuBgLayout = new javax.swing.GroupLayout(menuBg);
-        menuBg.setLayout(menuBgLayout);
-        menuBgLayout.setHorizontalGroup(
-            menuBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(proflieBg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(clientText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(rentText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(carText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        menuBgLayout.setVerticalGroup(
-            menuBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuBgLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(proflieBg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(clientText)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rentText, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(carText, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 210, Short.MAX_VALUE))
-        );
-
-        bg.add(menuBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 720));
-
-        submenu.setBackground(new java.awt.Color(255, 255, 255));
+        submenu.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        submenu.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        submenu.setLayer(carText, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        submenu.setLayer(rentText, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        submenu.setLayer(clientText, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout submenuLayout = new javax.swing.GroupLayout(submenu);
         submenu.setLayout(submenuLayout);
         submenuLayout.setHorizontalGroup(
             submenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 910, Short.MAX_VALUE)
+            .addGroup(submenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(534, 534, 534))
+            .addGroup(submenuLayout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 822, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(submenuLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(carText, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(submenuLayout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(rentText, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, submenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(clientText, javax.swing.GroupLayout.DEFAULT_SIZE, 805, Short.MAX_VALUE)
+                .addGap(99, 99, 99))
         );
         submenuLayout.setVerticalGroup(
             submenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 690, Short.MAX_VALUE)
+            .addGroup(submenuLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(rentText, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(carText, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
+                .addComponent(clientText)
+                .addGap(178, 178, 178))
         );
 
         bg.add(submenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 910, 690));
@@ -197,7 +213,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
