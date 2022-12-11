@@ -26,21 +26,193 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        bg = new javax.swing.JPanel();
+        exitBtn = new javax.swing.JPanel();
+        exitText = new javax.swing.JLabel();
+        header = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        menuBg = new javax.swing.JPanel();
+        proflieBg = new javax.swing.JPanel();
+        proflieIcon = new javax.swing.JLabel();
+        clientText = new javax.swing.JLabel();
+        rentText = new javax.swing.JLabel();
+        carText = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        submenu = new javax.swing.JDesktopPane();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
+
+        bg.setBackground(new java.awt.Color(255, 255, 255));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        exitBtn.setBackground(new java.awt.Color(0, 78, 106));
+
+        exitText.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        exitText.setForeground(new java.awt.Color(255, 255, 255));
+        exitText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exitText.setText("X");
+
+        javax.swing.GroupLayout exitBtnLayout = new javax.swing.GroupLayout(exitBtn);
+        exitBtn.setLayout(exitBtnLayout);
+        exitBtnLayout.setHorizontalGroup(
+            exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitBtnLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exitText, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+        exitBtnLayout.setVerticalGroup(
+            exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitText, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        bg.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 0, 40, 30));
+
+        header.setBackground(new java.awt.Color(0, 78, 106));
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Main Menu");
+
+        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
+        header.setLayout(headerLayout);
+        headerLayout.setHorizontalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addContainerGap(1244, Short.MAX_VALUE))
+        );
+        headerLayout.setVerticalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addContainerGap(8, Short.MAX_VALUE))
+        );
+
+        bg.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        menuBg.setBackground(new java.awt.Color(0, 39, 54));
+
+        proflieBg.setBackground(new java.awt.Color(0, 34, 47));
+
+        proflieIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Proflie_Icon2__1_-removebg-preview.png"))); // NOI18N
+        proflieIcon.setText("jLabel1");
+
+        javax.swing.GroupLayout proflieBgLayout = new javax.swing.GroupLayout(proflieBg);
+        proflieBg.setLayout(proflieBgLayout);
+        proflieBgLayout.setHorizontalGroup(
+            proflieBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(proflieBgLayout.createSequentialGroup()
+                .addComponent(proflieIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        proflieBgLayout.setVerticalGroup(
+            proflieBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(proflieIcon)
+        );
+
+        clientText.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        clientText.setForeground(new java.awt.Color(255, 255, 255));
+        clientText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/ClientsIcon (1).png"))); // NOI18N
+        clientText.setText("              Clientes");
+        clientText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clientTextMouseClicked(evt);
+            }
+        });
+
+        rentText.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        rentText.setForeground(new java.awt.Color(255, 255, 255));
+        rentText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/RentIcon-removebg-preview.png"))); // NOI18N
+        rentText.setText("               Alquiler");
+
+        carText.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        carText.setForeground(new java.awt.Color(255, 255, 255));
+        carText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/carIcon.png"))); // NOI18N
+        carText.setText("                 Vehículos");
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/soliIcon-removebg-preview.png"))); // NOI18N
+        jLabel1.setText("                 Solicitudes");
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/graphips__1_-removebg-preview.png"))); // NOI18N
+        jLabel2.setText("              Análisis");
+
+        javax.swing.GroupLayout menuBgLayout = new javax.swing.GroupLayout(menuBg);
+        menuBg.setLayout(menuBgLayout);
+        menuBgLayout.setHorizontalGroup(
+            menuBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(proflieBg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(clientText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(rentText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(carText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        menuBgLayout.setVerticalGroup(
+            menuBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuBgLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(proflieBg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(clientText)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rentText, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(carText, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 210, Short.MAX_VALUE))
+        );
+
+        bg.add(menuBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 720));
+
+        submenu.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout submenuLayout = new javax.swing.GroupLayout(submenu);
+        submenu.setLayout(submenuLayout);
+        submenuLayout.setHorizontalGroup(
+            submenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 910, Short.MAX_VALUE)
+        );
+        submenuLayout.setVerticalGroup(
+            submenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 690, Short.MAX_VALUE)
+        );
+
+        bg.add(submenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 910, 690));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void clientTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientTextMouseClicked
+          //Codigo
+          Clientes c = new Clientes();
+          submenu.add(c);
+          c.setVisible(true);
+    }//GEN-LAST:event_clientTextMouseClicked
 
     /**
      * @param args the command line arguments
@@ -78,5 +250,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bg;
+    private javax.swing.JLabel carText;
+    private javax.swing.JLabel clientText;
+    private javax.swing.JPanel exitBtn;
+    private javax.swing.JLabel exitText;
+    private javax.swing.JPanel header;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel menuBg;
+    private javax.swing.JPanel proflieBg;
+    private javax.swing.JLabel proflieIcon;
+    private javax.swing.JLabel rentText;
+    private javax.swing.JDesktopPane submenu;
     // End of variables declaration//GEN-END:variables
 }

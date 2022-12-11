@@ -5,6 +5,7 @@
 
 package Rent_A_Car;
 
+import Interfaces.MenuPrincipal;
 import javax.swing.JOptionPane;
 import java.nio.channels.Pipe;
 
@@ -15,6 +16,8 @@ import java.nio.channels.Pipe;
 public class Rent_A_Car_Java {
 
     public static void main(String[] args) {
+        MenuPrincipal menu = new MenuPrincipal();
+        menu.setVisible(true);
         
         ListaVehiculo listaVehiculo = new ListaVehiculo();
         ListaCliente listaCliente = new ListaCliente();
