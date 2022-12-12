@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
- */
-
 package Rent_A_Car;
 
 import Interfaces.MenuPrincipal;
@@ -13,19 +8,47 @@ import java.nio.channels.Pipe;
  *
  * @author David Gomez, Gabriel Brilla, Gerald Blanco, Alexander Torres
  */
+
 public class Rent_A_Car_Java {
 
     public static void main(String[] args) {
+        
         MenuPrincipal menu = new MenuPrincipal();
+        
+        // Se crea menu de tipo Menu principal llamado "menu"
+        
         menu.setVisible(true);
         
+        // El menu se vuelve visible
+        
         ListaVehiculo listaVehiculo = new ListaVehiculo();
+        
+        // Se crea una lista para vehiculo llamada "listavehiculo"
+        
         ListaCliente listaCliente = new ListaCliente();
+        
+        // Se crea una lista de clientes llamada "listacliente"
+        
         PilaAsignar listaSolicitudes= new PilaAsignar();
+        
+        /* Se crea una pila tipo PilaAsignar llamada 
+        *"lista solicitudes"
+        */
+            
         ColaSolicitud colaSolicitud = new ColaSolicitud();
         
+        /* Se crea una cola de solicitudes llamada 
+        * "coladesolicitudes"
+        */
+        
         int loop = 0;
+        
+        // Se crea un entero llamado loop que es igual a 0 
+        
         while(loop == 0) {
+            
+            // Mientras loop sea igual a cero este while no se acaba
+            
             int addCasa = JOptionPane.showConfirmDialog(null,
                     "Lista de Vehiculos:\n" + listaVehiculo + "\n\n" +
                     "Lista de Clientes:\n" + listaCliente + "\n" +
@@ -33,6 +56,12 @@ public class Rent_A_Car_Java {
                     "Lista de Asignar:\n" + listaSolicitudes.listarPila() + "\n" +
                             "Desea agregar mas a la fila?",
                     "Question",JOptionPane.YES_NO_OPTION);
+            
+            /* Se enseña un confirm dialog que muestra las listas que hemos creado
+            * y pregunta si se desea crear más filas y presenta una opcion si y una 
+            * opcion no
+            */
+            
             switch(addCasa) {
                 case 0:
 //  ********************** VEHICULO ***********************
@@ -60,7 +89,7 @@ public class Rent_A_Car_Java {
                             "Digite estado vehiculo:");
                     
 //  ********************** CLIENTE ***********************
-//                    
+                   
                     int cedula = Integer.parseInt(JOptionPane.showInputDialog(
                             "Digite cedula del cliente:"));
                     String nombre = JOptionPane.showInputDialog(
