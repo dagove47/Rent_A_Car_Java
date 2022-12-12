@@ -63,8 +63,17 @@ public class Rent_A_Car_Java {
             */
             
             switch(addCasa) {
+            
+            /*
+            * Se crea un switch case para poder controlar 
+            * el output basado en la respuesta del usuario
+            * (SI o NO)
+            */        
                 case 0:
+                    
+// En el caso que el usuario selecione SI : 
 //  ********************** VEHICULO ***********************
+                    
                     String placa = JOptionPane.showInputDialog(
                             "Digite placa:");
                     String marca = JOptionPane.showInputDialog(
@@ -87,6 +96,8 @@ public class Rent_A_Car_Java {
                             "Digite extras:");
                     String estado = JOptionPane.showInputDialog(
                             "Digite estado vehiculo:");
+                    
+                    
                     
 //  ********************** CLIENTE ***********************
                    
@@ -136,7 +147,25 @@ public class Rent_A_Car_Java {
                     
                                        
                     break;
+                    
+                    //<editor-fold defaultstate="collapsed" desc="SI">
+                    /*
+                    * Se le pide al usuario que digite los datos relevantes
+                    * para los vehiculos, el cliente la solicitud de alquiler
+                    * y lo necesario para asignar dicho alquiler, finalmente se 
+                    * utiliza break para indicar que el caso 0 finalizo
+                    */
+                    //</editor-fold>
+                    
                 default:
+                    
+                    // En caso de presionar NO
+                    
+                    /* 
+                    * Se cambia el valor de loop a uno y se utiliza break
+                    * para indicar que se finalizo el caso "default"
+                    */
+                    
                     loop = 1;
                     break;
             }
