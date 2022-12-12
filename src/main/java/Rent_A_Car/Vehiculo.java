@@ -9,6 +9,14 @@ package Rent_A_Car;
  * @author David Gomez, Gabriel Brilla, Gerald Blanco, Alexander Torres
  */
 public class Vehiculo {
+    
+    //<editor-fold defaultstate="collapsed" desc="Variables">
+    /*
+    * Se declaran todas las variables que seran utilizados 
+    * en la clase.
+    */    
+    //</editor-fold>
+    
     private String placa;
     private String marca;
     private String modelo;
@@ -20,6 +28,14 @@ public class Vehiculo {
     private int precioDia;
     private String extras;
     private String estado;
+    
+    //<editor-fold defaultstate="collapsed" desc="Vehiculo(Parametros)">
+    /*
+    * Se le asignan a Vehiculos todos los parametros
+    * que los usuario del sistema usaran para deiferenciar 
+    * un vehiculo de otro con velocidad y facilidad.
+    */    
+    //</editor-fold>
     
     public Vehiculo(String placa, String marca, String modelo, int anno, 
             String color, String cilindrada, String combustible, int pasajeros, 
@@ -39,6 +55,15 @@ public class Vehiculo {
     
     public Vehiculo(){}
 
+    //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
+    /*
+    * Se crea un setter y un getter para 
+    * todas las variables que seran utilizados 
+    * en otras clases
+    */    
+    //</editor-fold>
+    
+    
     public String getPlaca() {
         return placa;
     }
@@ -126,6 +151,13 @@ public class Vehiculo {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+    
+    //<editor-fold defaultstate="collapsed" desc="Override">
+    /*
+    * En el to string se añaden las variables y las 
+    * denotan anteriormente con strings.
+    */    
+    //</editor-fold>
     
     @Override
     public String toString(){
