@@ -1,11 +1,20 @@
 package Rent_A_Car;
 
 public class NodoA {
+    /*
+    * Se generan las variables que se van a 
+    * utilizzar en esta clase.
+    */
+    
     private Asignar alquileres;
     private NodoA nodoanterior;
     
     public NodoA() {
     }
+    
+    /*
+    * En el override 
+    */
     
     @Override
     public String toString(){
