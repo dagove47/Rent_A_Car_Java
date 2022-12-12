@@ -132,6 +132,19 @@ public class ListaVehiculo {
         return p;
     }
     
+    //<editor-fold defaultstate="collapsed" desc="Override">
+    /*
+    * El override convierte la lista en un string 
+    * entonces se crea un sting llamado "s" y un nodo
+    * llamado aux que es igual a frente, luego si aux 
+    * existe el contenido de aux se agrega al vacio
+    * que es "s" y se crea una nueva linea de texto. 
+    * Luego aux se convierte en el nodo que existe 
+    * detras del frente y luego se da como resultado
+    * "s"
+    */        
+//</editor-fold>
+    
     @Override
     public String toString(){
         NodoV aux = cabeza;
