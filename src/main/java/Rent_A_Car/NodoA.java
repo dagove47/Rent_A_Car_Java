@@ -3,7 +3,7 @@ package Rent_A_Car;
 public class NodoA {
     /*
     * Se generan las variables que se van a 
-    * utilizzar en esta clase.
+    * utilizar en esta clase.
     */
     
     private Asignar alquileres;
@@ -12,15 +12,29 @@ public class NodoA {
     public NodoA() {
     }
     
+    //<editor-fold defaultstate="collapsed" desc="Override">
     /*
-    * En el override 
-    */
+    * En el override solamente 
+    * hace uso del metodo toString
+    * que simplemente regresa una 
+    * representacion string del 
+    * valor que se le ha pedido.
+    */        
+    //</editor-fold>
     
     @Override
     public String toString(){
         return alquileres.toString();
     }
-
+    
+    //<editor-fold defaultstate="collapsed" desc="Override">
+    /*
+    * se asigna un getter y un setter para las variables
+    * que se van a usar en otras clases y en el main.
+    */        
+    //</editor-fold>
+    
+    
     public Asignar getAlquileres() {
         return alquileres;
     }
