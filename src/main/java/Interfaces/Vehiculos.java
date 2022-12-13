@@ -4,6 +4,7 @@
  */
 package Interfaces;
 
+import Rent_A_Car.*;
 import java.awt.Color;
 
 /**
@@ -18,6 +19,8 @@ public class Vehiculos extends javax.swing.JInternalFrame {
     public Vehiculos() {
         initComponents();
     }
+
+    ListaVehiculo listaVehiculo = new ListaVehiculo();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -323,11 +326,13 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         statusCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponible", "No Disponible" }));
         bg.add(statusCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 260, -1));
 
+        panel.setEditable(false);
         panel.setColumns(20);
         panel.setRows(5);
+        panel.setBorder(null);
         jScrollPane1.setViewportView(panel);
 
-        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 900, 260));
+        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 900, 260));
 
         deleteBtn.setText("Eliminar");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -409,6 +414,42 @@ public class Vehiculos extends javax.swing.JInternalFrame {
 
     private void newBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newBtnActionPerformed
         // TODO add your handling code here:
+        listaVehiculo.inserta(new Vehiculo(typePlaca.getText(), typeMarca.getText(),
+                typeModel.getText(), Integer.parseInt(typeYear.getText()), typeColor.getText(),
+                typeCC.getText(), String.valueOf(gasCombo.getSelectedItem()),
+                Integer.parseInt(typeEspacios.getText()), Integer.parseInt(typeDayCost.getText()),
+                typeExtras.getText(), String.valueOf(statusCombo.getSelectedItem())));
+
+        panel.setText(String.valueOf(listaVehiculo));
+
+        typePlaca.setText("409425");
+        typePlaca.setForeground(Color.gray);
+
+        typeMarca.setText("Hyundai");
+        typeMarca.setForeground(Color.gray);
+
+        typeModel.setText("Accent");
+        typeModel.setForeground(Color.gray);
+
+        typeYear.setText("2023");
+        typeYear.setForeground(Color.gray);
+
+        typeColor.setText("Blanco");
+        typeColor.setForeground(Color.gray);
+
+        typeCC.setText("250cc");
+        typeCC.setForeground(Color.gray);
+
+        typeEspacios.setText("5");
+        typeEspacios.setForeground(Color.gray);
+
+        typeDayCost.setText("30");
+        typeDayCost.setForeground(Color.gray);
+
+        typeExtras.setText("Camara, sensores, barra");
+        typeExtras.setForeground(Color.gray);
+
+
     }//GEN-LAST:event_newBtnActionPerformed
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
