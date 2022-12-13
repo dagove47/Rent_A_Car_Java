@@ -6,10 +6,13 @@ package Rent_A_Car;
  */
 public class NodoC {
     
+    //<editor-fold defaultstate="collapsed" desc="Variables">
     /*
     * Se declaran las variables que se van a usar
     * en esta y las otras clases.
     */    
+    //</editor-fold>
+        
     
     private Cliente dato;
     private NodoC next;

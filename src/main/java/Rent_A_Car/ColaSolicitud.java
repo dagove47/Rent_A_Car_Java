@@ -15,14 +15,18 @@ public class ColaSolicitud {
 
     public ColaSolicitud() {
     }
-    /*
-    * Encola : 
+    
+    //<editor-fold defaultstate="collapsed" desc="Encola">
+    /* 
     * Se declara un nodo nuevo llamado newNodo
     * si el nodo frente no existe se crea un  nuevo nodo llamado
     * frente y otro llamado ultimo. Si el nodo llamado frente ya
     * existe entonces newNodo se pone detras de ultimo y ultimo 
     * se iguala a Newnodo
-    */
+    */    
+    //</editor-fold>
+    
+    
     public void encola(Solicitud solicitud){
         NodoS newNodo=new NodoS(solicitud);
         if(frente == null){
@@ -33,14 +37,15 @@ public class ColaSolicitud {
             ultimo=newNodo;
         }
     }
-    
+    //<editor-fold defaultstate="collapsed" desc="Preferencial">
     /*
-    * Prefernecial : 
     * se crea un nodo nuevo llamado NewNodo, si frente no existe 
     * se crean dos nodos nuevos uno llamado frente y uno llamado 
     * ultimo, si frente ya existe entonces newNodo se crea antes que frente
     * y frente se iguala a newNodo.
-    */
+    */    
+    //</editor-fold>
+    
     
     public void preferencial(Solicitud solicitud) {
         NodoS newNodo=new NodoS(solicitud);
@@ -65,15 +70,19 @@ public class ColaSolicitud {
 //        return result;
 //    }
     
-    /*
-    * Atiende : 
+    
+    //<editor-fold defaultstate="collapsed" desc="Atiende">
+    /* 
     * Se crea un nuevo Nodo lamado aux que es
     * exactamente igual que frente, si frente 
     * existe entonces frente se convierte en 
     * el nodo que esta antes, aux pierde su
     * valor y el valor de aux se regresa
     * como el resultado de atiende.
-    */
+    */    
+    //</editor-fold>
+    
+    
     
     public NodoS atiende(){
         NodoS aux = frente;
@@ -83,7 +92,7 @@ public class ColaSolicitud {
         }
         return aux;
     }
-    
+    //<editor-fold defaultstate="collapsed" desc="Override">
     /*
     * El override convierte la lista en un string 
     * entonces se crea un sting llamado "s" y un nodo
@@ -93,7 +102,9 @@ public class ColaSolicitud {
     * Luego aux se convierte en el nodo que existe 
     * detras del frente y luego se da como resultado
     * "s"
-    */
+    */    
+    //</editor-fold>
+    
     
     
     @Override

@@ -5,10 +5,14 @@ package Rent_A_Car;
  * @author David Gomez, Gabriel Brilla, Gerald Blanco, Alexander Torres
  */
 public class ListaCliente {
+    
+    //<editor-fold defaultstate="collapsed" desc="Variables">
     /*
     * Se asigna la variable cabeza que se va a usar 
     * en la clase
-    */
+    */   
+    //</editor-fold>
+    
     private NodoC cabeza;
     
     
@@ -67,10 +71,15 @@ public class ListaCliente {
     
     public boolean existe (int cedula){
         boolean esta = false;
+        
+        //<editor-fold defaultstate="collapsed" desc="Existe">
         /*
         *Busca en lista, y retorna true si un Cliente tiene cedula
         *en la lista
         */
+        //</editor-fold>
+        
+        
         if (cabeza != null){
             // Si hay algo en la lista buscaré
             NodoC aux = cabeza;

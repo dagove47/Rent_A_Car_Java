@@ -21,7 +21,7 @@ public class PilaAsignar {
     * se van a usar en esta y otras clases.
     */
     
-    //<editor-fold defaultstate="collapsed" desc="push">
+    //<editor-fold defaultstate="collapsed" desc="Push">
     /*
     * cuando push recibe un "Asignar" lo designa
     * como "solicitud". Luego crea un nuevo Nodo
