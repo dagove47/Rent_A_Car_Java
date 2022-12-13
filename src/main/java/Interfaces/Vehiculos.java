@@ -71,6 +71,8 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         deleteBtn = new javax.swing.JButton();
         newBtn = new javax.swing.JButton();
         updateBtn = new javax.swing.JButton();
+        typeSearch = new javax.swing.JTextField();
+        searchBtn = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(910, 690));
 
@@ -358,6 +360,29 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         });
         bg.add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 240, 40));
 
+        typeSearch.setForeground(new java.awt.Color(153, 153, 153));
+        typeSearch.setText("Busqueda por # de placa");
+        typeSearch.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, new java.awt.Color(0, 0, 0)));
+        typeSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeSearchMousePressed(evt);
+            }
+        });
+        typeSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                typeSearchActionPerformed(evt);
+            }
+        });
+        bg.add(typeSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 370, 160, 40));
+
+        searchBtn.setText("Buscar");
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBtnActionPerformed(evt);
+            }
+        });
+        bg.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, 80, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -505,6 +530,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
             typeExtras.setForeground(Color.gray);
 
         }
+        if (typeSearch.getText().isEmpty()) {
+            typeSearch.setText("Busqueda por # de placa");
+            typeSearch.setForeground(Color.gray);
+
+        }
 
     }//GEN-LAST:event_typePlacaMousePressed
 
@@ -558,6 +588,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
             typeExtras.setForeground(Color.gray);
 
         }
+        if (typeSearch.getText().isEmpty()) {
+            typeSearch.setText("Busqueda por # de placa");
+            typeSearch.setForeground(Color.gray);
+
+        }
     }//GEN-LAST:event_typeMarcaMousePressed
 
     private void typeModelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeModelMousePressed
@@ -607,6 +642,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         if (typeExtras.getText().isEmpty()) {
             typeExtras.setText("Camara, sensores, barra");
             typeExtras.setForeground(Color.gray);
+
+        }
+        if (typeSearch.getText().isEmpty()) {
+            typeSearch.setText("Busqueda por # de placa");
+            typeSearch.setForeground(Color.gray);
 
         }
     }//GEN-LAST:event_typeModelMousePressed
@@ -660,6 +700,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
             typeExtras.setForeground(Color.gray);
 
         }
+        if (typeSearch.getText().isEmpty()) {
+            typeSearch.setText("Busqueda por # de placa");
+            typeSearch.setForeground(Color.gray);
+
+        }
     }//GEN-LAST:event_typeYearMousePressed
 
     private void typeColorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeColorMousePressed
@@ -709,6 +754,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         if (typeExtras.getText().isEmpty()) {
             typeExtras.setText("Camara, sensores, barra");
             typeExtras.setForeground(Color.gray);
+
+        }
+        if (typeSearch.getText().isEmpty()) {
+            typeSearch.setText("Busqueda por # de placa");
+            typeSearch.setForeground(Color.gray);
 
         }
     }//GEN-LAST:event_typeColorMousePressed
@@ -762,6 +812,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
             typeExtras.setForeground(Color.gray);
 
         }
+        if (typeSearch.getText().isEmpty()) {
+            typeSearch.setText("Busqueda por # de placa");
+            typeSearch.setForeground(Color.gray);
+
+        }
     }//GEN-LAST:event_typeCCMousePressed
 
     private void typeEspaciosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeEspaciosMousePressed
@@ -811,6 +866,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         if (typeExtras.getText().isEmpty()) {
             typeExtras.setText("Camara, sensores, barra");
             typeExtras.setForeground(Color.gray);
+
+        }
+        if (typeSearch.getText().isEmpty()) {
+            typeSearch.setText("Busqueda por # de placa");
+            typeSearch.setForeground(Color.gray);
 
         }
     }//GEN-LAST:event_typeEspaciosMousePressed
@@ -864,6 +924,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
             typeExtras.setForeground(Color.gray);
 
         }
+        if (typeSearch.getText().isEmpty()) {
+            typeSearch.setText("Busqueda por # de placa");
+            typeSearch.setForeground(Color.gray);
+
+        }
     }//GEN-LAST:event_typeDayCostMousePressed
 
     private void typeExtrasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeExtrasMousePressed
@@ -915,7 +980,111 @@ public class Vehiculos extends javax.swing.JInternalFrame {
             typeExtras.setForeground(Color.black);
 
         }
+        if (typeSearch.getText().isEmpty()) {
+            typeSearch.setText("Busqueda por # de placa");
+            typeSearch.setForeground(Color.gray);
+
+        }
     }//GEN-LAST:event_typeExtrasMousePressed
+
+    private void typeSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_typeSearchActionPerformed
+
+    private void typeSearchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeSearchMousePressed
+        // TODO add your handling code here:
+        if (typePlaca.getText().isEmpty()) {
+            typePlaca.setText("409425");
+            typePlaca.setForeground(Color.gray);
+        }
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2023");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeColor.getText().isEmpty()) {
+            typeColor.setText("Blanco");
+            typeColor.setForeground(Color.gray);
+        }
+
+        if (typeCC.getText().isEmpty()) {
+            typeColor.setText("250cc");
+            typeColor.setForeground(Color.gray);
+
+        }
+
+        if (typeEspacios.getText().isEmpty()) {
+            typeEspacios.setText("5");
+            typeEspacios.setForeground(Color.gray);
+
+        }
+
+        if (typeDayCost.getText().isEmpty()) {
+            typeDayCost.setText("30");
+            typeDayCost.setForeground(Color.gray);
+
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, sensores, barra");
+            typeExtras.setForeground(Color.gray);
+
+        }
+
+        if (typeSearch.getText().equals("Busqueda por # de placa")) {
+            typeSearch.setText("");
+            typeSearch.setForeground(Color.black);
+
+        }
+    }//GEN-LAST:event_typeSearchMousePressed
+
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        // TODO add your handling code here:
+        Vehiculo buscado = listaVehiculo.buscar(typeSearch.getText());
+        typeSearch.setText("Busqueda por # de placa");
+
+        typePlaca.setText(buscado.getPlaca());
+        typePlaca.setForeground(Color.black);
+
+        typeMarca.setText(buscado.getMarca());
+        typeMarca.setForeground(Color.black);
+
+        typeModel.setText(buscado.getModelo());
+        typeModel.setForeground(Color.black);
+
+        typeYear.setText(String.valueOf(buscado.getAnno()));
+        typeYear.setForeground(Color.black);
+
+        typeColor.setText(buscado.getColor());
+        typeColor.setForeground(Color.black);
+
+        typeCC.setText(buscado.getCilindrada());
+        typeCC.setForeground(Color.black);
+
+        typeEspacios.setText(String.valueOf(buscado.getPasajeros()));
+        typeEspacios.setForeground(Color.black);
+
+        typeDayCost.setText(String.valueOf(buscado.getPrecioDia()));
+        typeDayCost.setForeground(Color.black);
+
+        typeExtras.setText(buscado.getExtras());
+        typeExtras.setForeground(Color.black);
+        
+        gasCombo.setSelectedItem(buscado.getCombustible());
+        
+        statusCombo.setSelectedItem(buscado.getEstado());
+
+    }//GEN-LAST:event_searchBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -945,6 +1114,7 @@ public class Vehiculos extends javax.swing.JInternalFrame {
     private javax.swing.JButton newBtn;
     private javax.swing.JTextArea panel;
     private javax.swing.JLabel placaText;
+    private javax.swing.JButton searchBtn;
     private javax.swing.JComboBox<String> statusCombo;
     private javax.swing.JLabel statusText;
     private javax.swing.JLabel tittle;
@@ -956,6 +1126,7 @@ public class Vehiculos extends javax.swing.JInternalFrame {
     private javax.swing.JTextField typeMarca;
     private javax.swing.JTextField typeModel;
     private javax.swing.JTextField typePlaca;
+    private javax.swing.JTextField typeSearch;
     private javax.swing.JTextField typeYear;
     private javax.swing.JButton updateBtn;
     private javax.swing.JLabel yearText;
