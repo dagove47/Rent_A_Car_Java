@@ -4,6 +4,7 @@
  */
 package Interfaces;
 
+import Rent_A_Car.*;
 import java.awt.Color;
 
 /**
@@ -19,6 +20,8 @@ public class Clientes extends javax.swing.JInternalFrame {
         this.setSize(910, 690);
         initComponents();
     }
+
+    ListaCliente listaCliente = new ListaCliente();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,6 +55,8 @@ public class Clientes extends javax.swing.JInternalFrame {
         deleteBtn = new javax.swing.JButton();
         textPanel = new javax.swing.JScrollPane();
         textClients = new javax.swing.JTextArea();
+        typeSearch = new javax.swing.JTextField();
+        searchBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(null);
@@ -108,11 +113,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         bg.add(typeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 240, -1));
 
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 260, 10));
+        bg.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 260, 10));
 
         idText.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         idText.setText("Número de Cédula:");
-        bg.add(idText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        bg.add(idText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         typeId.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         typeId.setForeground(new java.awt.Color(153, 153, 153));
@@ -128,14 +133,14 @@ public class Clientes extends javax.swing.JInternalFrame {
                 typeIdActionPerformed(evt);
             }
         });
-        bg.add(typeId, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 260, 30));
+        bg.add(typeId, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 260, 30));
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 260, 10));
 
         birthText.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         birthText.setText("Fecha de Nacimiento:");
-        bg.add(birthText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+        bg.add(birthText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
         typeBirth.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         typeBirth.setForeground(new java.awt.Color(153, 153, 153));
@@ -152,14 +157,14 @@ public class Clientes extends javax.swing.JInternalFrame {
                 typeBirthActionPerformed(evt);
             }
         });
-        bg.add(typeBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 250, -1));
+        bg.add(typeBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 250, -1));
 
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 260, 10));
+        bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 260, 10));
 
         emailText.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         emailText.setText("Correo Electrónico:");
-        bg.add(emailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
+        bg.add(emailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
 
         typeEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         typeEmail.setForeground(new java.awt.Color(153, 153, 153));
@@ -170,14 +175,14 @@ public class Clientes extends javax.swing.JInternalFrame {
                 typeEmailMousePressed(evt);
             }
         });
-        bg.add(typeEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 270, -1));
+        bg.add(typeEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 270, -1));
 
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 250, 10));
+        bg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 250, 10));
 
         lvText.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lvText.setText("Categoría: ");
-        bg.add(lvText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
+        bg.add(lvText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
 
         lvOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bronce", "Plata", "Oro", "Zafiro" }));
         lvOptions.addActionListener(new java.awt.event.ActionListener() {
@@ -185,7 +190,7 @@ public class Clientes extends javax.swing.JInternalFrame {
                 lvOptionsActionPerformed(evt);
             }
         });
-        bg.add(lvOptions, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 260, -1));
+        bg.add(lvOptions, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 260, -1));
 
         addBtn.setText("Agregar Nuevo Cliente");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -210,19 +215,45 @@ public class Clientes extends javax.swing.JInternalFrame {
         textClients.setRows(5);
         textPanel.setViewportView(textClients);
 
-        bg.add(textPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 880, 290));
+        bg.add(textPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 880, 230));
+
+        typeSearch.setForeground(new java.awt.Color(153, 153, 153));
+        typeSearch.setText("Busqueda por # de cedula");
+        typeSearch.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, new java.awt.Color(0, 0, 0)));
+        typeSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeSearchMousePressed(evt);
+            }
+        });
+        typeSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                typeSearchActionPerformed(evt);
+            }
+        });
+        bg.add(typeSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, 190, 40));
+
+        searchBtn.setText("Buscar");
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBtnActionPerformed(evt);
+            }
+        });
+        bg.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 340, 80, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         pack();
@@ -246,6 +277,23 @@ public class Clientes extends javax.swing.JInternalFrame {
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
+        listaCliente.inserta(new Cliente(Integer.parseInt(typeId.getText()),
+                typeName.getText(), typeBirth.getText(), typeEmail.getText(),
+                String.valueOf(lvOptions.getSelectedItem())));
+
+        typeName.setText("Ingrese el nombre completo del cliente");
+        typeName.setForeground(Color.gray);
+
+        typeBirth.setText("Ingrese el ID card del cliente");
+        typeBirth.setForeground(Color.gray);
+
+        typeEmail.setText("Ingrese la fecha de nacimiento");
+        typeEmail.setForeground(Color.gray);
+
+        typeId.setText("example@gmail.com");
+        typeId.setForeground(Color.gray);
+        
+        textClients.setText(String.valueOf(listaCliente));
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
@@ -273,6 +321,12 @@ public class Clientes extends javax.swing.JInternalFrame {
             typeEmail.setForeground(Color.gray);
         }
 
+        if (typeSearch.getText().isEmpty()) {
+            typeSearch.setText("Busqueda por # de cedula");
+            typeSearch.setForeground(Color.gray);
+
+        }
+
     }//GEN-LAST:event_typeNameMousePressed
 
     private void typeIdMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeIdMousePressed
@@ -294,6 +348,12 @@ public class Clientes extends javax.swing.JInternalFrame {
         if (typeEmail.getText().isEmpty()) {
             typeEmail.setText("example@gmail.com");
             typeEmail.setForeground(Color.gray);
+        }
+
+        if (typeSearch.getText().isEmpty()) {
+            typeSearch.setText("Busqueda por # de cedula");
+            typeSearch.setForeground(Color.gray);
+
         }
     }//GEN-LAST:event_typeIdMousePressed
 
@@ -317,6 +377,12 @@ public class Clientes extends javax.swing.JInternalFrame {
             typeEmail.setText("example@gmail.com");
             typeEmail.setForeground(Color.gray);
         }
+
+        if (typeSearch.getText().isEmpty()) {
+            typeSearch.setText("Busqueda por # de cedula");
+            typeSearch.setForeground(Color.gray);
+
+        }
     }//GEN-LAST:event_typeBirthMousePressed
 
     private void typeEmailMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeEmailMousePressed
@@ -339,7 +405,66 @@ public class Clientes extends javax.swing.JInternalFrame {
             typeEmail.setText("");
             typeEmail.setForeground(Color.black);
         }
+
+        if (typeSearch.getText().isEmpty()) {
+            typeSearch.setText("Busqueda por # de cedula");
+            typeSearch.setForeground(Color.gray);
+
+        }
     }//GEN-LAST:event_typeEmailMousePressed
+
+    private void typeSearchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeSearchMousePressed
+        // TODO add your handling code here:
+        if (typeName.getText().isEmpty()) {
+            typeName.setText("Ingrese el nombre completo del cliente");
+            typeName.setForeground(Color.gray);
+        }
+        if (typeId.getText().isEmpty()) {
+            typeId.setText("Ingrese el ID card del cliente");
+            typeId.setForeground(Color.gray);
+        }
+
+        if (typeBirth.getText().isEmpty()) {
+            typeBirth.setText("Ingrese la fecha de nacimiento");
+            typeBirth.setForeground(Color.gray);
+        }
+
+        if (typeEmail.getText().isEmpty()) {
+            typeEmail.setText("example@gmail.com");
+            typeEmail.setForeground(Color.gray);
+        }
+
+        if (typeSearch.getText().equals("Busqueda por # de cedula")) {
+            typeSearch.setText("");
+            typeSearch.setForeground(Color.black);
+
+        }
+    }//GEN-LAST:event_typeSearchMousePressed
+
+    private void typeSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_typeSearchActionPerformed
+
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        // TODO add your handling code here:
+        Cliente buscado = listaCliente.buscar(Integer.parseInt(typeSearch.getText()));
+        typeSearch.setText("Busqueda por # de cedula");
+
+        typeName.setText(buscado.getNombre());
+        typeName.setForeground(Color.black);
+
+        typeBirth.setText(buscado.getNacimiento());
+        typeBirth.setForeground(Color.black);
+
+        typeEmail.setText(buscado.getEmail());
+        typeEmail.setForeground(Color.black);
+
+        typeId.setText(String.valueOf(buscado.getCedula()));
+        typeId.setForeground(Color.black);
+
+        lvOptions.setSelectedItem(buscado.getCategoria());
+
+    }//GEN-LAST:event_searchBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -358,6 +483,7 @@ public class Clientes extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> lvOptions;
     private javax.swing.JLabel lvText;
     private javax.swing.JLabel nameText;
+    private javax.swing.JButton searchBtn;
     private javax.swing.JTextArea textClients;
     private javax.swing.JScrollPane textPanel;
     private javax.swing.JLabel tittle;
@@ -365,6 +491,7 @@ public class Clientes extends javax.swing.JInternalFrame {
     private javax.swing.JTextField typeEmail;
     private javax.swing.JTextField typeId;
     private javax.swing.JTextField typeName;
+    private javax.swing.JTextField typeSearch;
     private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables
 }

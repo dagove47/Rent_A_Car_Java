@@ -5,19 +5,17 @@ package Rent_A_Car;
  * @author David Gomez, Gabriel Brilla, Gerald Blanco, Alexander Torres
  */
 public class ListaCliente {
-    
+
     //<editor-fold defaultstate="collapsed" desc="Variables">
     /*
     * Se asigna la variable cabeza que se va a usar 
     * en la clase
-    */   
+     */
     //</editor-fold>
-    
     private NodoC cabeza;
-    
-    
+    private Cliente buscado;
+
     //<editor-fold defaultstate="collapsed" desc="Inserta : ">
-    
     /*
     * Si cabeza no existe se crea un nuevo nodo llamado
     * cabeza con el valor que se le indico cuando se incio
@@ -42,142 +40,151 @@ public class ListaCliente {
     * y se consigue el next de temp segun
     * el getNext de aux y getNext de aux 
     * segun el temp.
-    */
-    
+     */
     //</editor-fold>
-    
-    public void inserta(Cliente p){
-        if(cabeza==null){
+    public void inserta(Cliente p) {
+        if (cabeza == null) {
             cabeza = new NodoC(p);
-    
-        }else if(p.getCedula()<cabeza.getDato().getCedula()){
+
+        } else if (p.getCedula() < cabeza.getDato().getCedula()) {
             NodoC aux = new NodoC(p);
             aux.setNext(cabeza);
-            cabeza=aux;
-        }else if(cabeza.getNext()==null){
+            cabeza = aux;
+        } else if (cabeza.getNext() == null) {
             cabeza.setNext(new NodoC(p));
-        }else{
-           NodoC aux = cabeza;
-           while (aux.getNext() != null &&
-                   aux.getNext().getDato().getCedula()
-                   <p.getCedula()){
-               aux=aux.getNext();
-           }
-           NodoC temp = new NodoC(p);
-           temp.setNext(aux.getNext());
-           aux.setNext(temp);
-        } 
+        } else {
+            NodoC aux = cabeza;
+            while (aux.getNext() != null
+                    && aux.getNext().getDato().getCedula()
+                    < p.getCedula()) {
+                aux = aux.getNext();
+            }
+            NodoC temp = new NodoC(p);
+            temp.setNext(aux.getNext());
+            aux.setNext(temp);
+        }
     }
-    
-    public boolean existe (int cedula){
+
+    public boolean existe(int cedula) {
         boolean esta = false;
-        
+
         //<editor-fold defaultstate="collapsed" desc="Existe">
         /*
         *Busca en lista, y retorna true si un Cliente tiene cedula
         *en la lista
-        */
+         */
         //</editor-fold>
-        
-        
-        if (cabeza != null){
+        if (cabeza != null) {
             // Si hay algo en la lista buscaré
             NodoC aux = cabeza;
             // Utilizo aux como indice
 
             //Mientras no se acabe la lista y el elemento
             //de la lista sea menor que el buscado
-            
-            while (aux != null && aux.getDato().getCedula() < cedula){
-                aux = aux.getNext () ;
+            while (aux != null && aux.getDato().getCedula() < cedula) {
+                aux = aux.getNext();
                 // Se avanza la lista
             }
 
             //verdadero si lo encontró
-            
-            esta = (aux != null && aux.getDato().getCedula()== cedula);
+            esta = (aux != null && aux.getDato().getCedula() == cedula);
         }
 
         return esta;
     }
-    
-    public void modifica (Cliente p) {
+
+    public void modifica(Cliente p) {
         // Busca a si existe alguien con cedula, y le actualiza el nombre
         if (cabeza != null) {
             // Si hay algo en la lista buscaré
-            NodoC aux = cabeza; 
+            NodoC aux = cabeza;
             // utilizo aux como indice
             // Mientras no se acabe la lista y el elemento
             // de la lista sea menor que el buscado
             while (aux != null && aux.getDato().getCedula() < p.getCedula()) {
-                aux = aux. getNext (); 
+                aux = aux.getNext();
                 // Se avanza la lista
             }
             // Si lo encuentra hago el cambio
-            if (aux != null && aux.getDato().getCedula() == p.getCedula ()){
+            if (aux != null && aux.getDato().getCedula() == p.getCedula()) {
                 // Solo básta cambiar nombre
-                aux.getDato().setNombre(p.getNombre()) ;
+                aux.getDato().setNombre(p.getNombre());
             }
         }
-    } 
-    public void elimina (int cedula) {
+    }
+
+    public void elimina(int cedula) {
         // Si un Cliente tiene el id, lo elimina
-        if (cabeza != null) { 
+        if (cabeza != null) {
             // Si hay algo en la lista buscaré
-            if (cabeza.getDato().getCedula() == cedula) 
-            {
+            if (cabeza.getDato().getCedula() == cedula) {
                 cabeza = cabeza.getNext();
-            } 
-            else {
-                NodoC aux = cabeza; 
+            } else {
+                NodoC aux = cabeza;
                 // Utilizo aux como indice
                 // mientras no se acabe la lista y el elemento
                 // de la lista sea menor que el buscado
-                while (aux.getNext() != null &&
-                    aux.getNext().getDato().getCedula() < cedula) {
-                    aux = aux.getNext() ;
+                while (aux.getNext() != null
+                        && aux.getNext().getDato().getCedula() < cedula) {
+                    aux = aux.getNext();
                 }
                 // Se avanza la lista
-            
+
                 // Si es el de adelante lo borro
-                
-                if (aux.getNext() != null &&
-                aux.getNext().getDato().getCedula() == cedula) {
-                    aux.setNext(aux.getNext().getNext()); 
+                if (aux.getNext() != null
+                        && aux.getNext().getDato().getCedula() == cedula) {
+                    aux.setNext(aux.getNext().getNext());
                     // Se cambia la referencia
                 }
             }
         }
     }
-    
-    public Cliente extrae (int cedula) {
+
+    public Cliente extrae(int cedula) {
         Cliente p = null;
         // Si un Cliente tiene cedula, lo extrae (eliminando y retornando)
-        if (cabeza != null) { 
+        if (cabeza != null) {
             // Si hay algo en la lista buscaré
             if (cabeza.getDato().getCedula() == cedula) {
-                cabeza = cabeza.getNext() ;
+                cabeza = cabeza.getNext();
             } else {
-                NodoC aux = cabeza; 
+                NodoC aux = cabeza;
                 // Utilizo aux como indice
                 // Mientras no se acabe la lista y el elemento
                 // de la lista sea menor que el buscado
                 while (aux.getNext() != null && aux.getNext().getDato().getCedula()
-                < cedula){
-                    aux = aux.getNext() ;
+                        < cedula) {
+                    aux = aux.getNext();
                     // Se avanza la lista
                 }
                 // Si es el de adelante... quardo el Cliente y lo borro
                 if (aux.getNext() != null && aux.getNext().getDato().getCedula() == cedula) {
-                    p = aux. getNext () .getDato () ;
-                    aux. setNext (aux.getNext().getNext()) ;
+                    p = aux.getNext().getDato();
+                    aux.setNext(aux.getNext().getNext());
                     //cambio las referencias
                 }
             }
         }
         return p;
     }
-    
+
+    public Cliente buscar(int  id) {
+        if (cabeza != null) {
+
+            NodoC aux = cabeza;
+
+            while (aux != null && aux.getDato().getCedula() != id) {
+                aux = aux.getNext();
+
+            }
+
+            if (aux != null && aux.getDato().getCedula() == id ) {
+                buscado = aux.getDato();
+            }
+        }
+        return buscado;
+    }
+
 //<editor-fold defaultstate="collapsed" desc="Override">
     /*
     * El override convierte la lista en un string 
@@ -188,14 +195,13 @@ public class ListaCliente {
     * Luego aux se convierte en el nodo que existe 
     * detras del frente y luego se da como resultado
     * "s"
-    */        
+     */
 //</editor-fold>
-    
     @Override
-    public String toString(){
+    public String toString() {
         NodoC aux = cabeza;
-        String s="";
-        while(aux!=null){
+        String s = "";
+        while (aux != null) {
             s += aux + "\n";
             aux = aux.getNext();
         }
