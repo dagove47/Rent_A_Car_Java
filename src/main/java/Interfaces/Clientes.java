@@ -4,6 +4,8 @@
  */
 package Interfaces;
 
+import java.awt.Color;
+
 /**
  *
  * @author gblan
@@ -93,6 +95,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         typeName.setForeground(new java.awt.Color(153, 153, 153));
         typeName.setText("Ingrese el nombre completo del cliente");
         typeName.setBorder(null);
+        typeName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeNameMousePressed(evt);
+            }
+        });
         typeName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeNameActionPerformed(evt);
@@ -111,6 +118,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         typeId.setForeground(new java.awt.Color(153, 153, 153));
         typeId.setText("Ingrese el ID card del cliente");
         typeId.setBorder(null);
+        typeId.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeIdMousePressed(evt);
+            }
+        });
         typeId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeIdActionPerformed(evt);
@@ -130,6 +142,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         typeBirth.setText("Ingrese la fecha de nacimiento");
         typeBirth.setToolTipText("");
         typeBirth.setBorder(null);
+        typeBirth.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeBirthMousePressed(evt);
+            }
+        });
         typeBirth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeBirthActionPerformed(evt);
@@ -148,6 +165,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         typeEmail.setForeground(new java.awt.Color(153, 153, 153));
         typeEmail.setText("example@gmail.com");
         typeEmail.setBorder(null);
+        typeEmail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeEmailMousePressed(evt);
+            }
+        });
         bg.add(typeEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 270, -1));
 
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
@@ -229,6 +251,95 @@ public class Clientes extends javax.swing.JInternalFrame {
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_updateBtnActionPerformed
+
+    private void typeNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeNameMousePressed
+        // TODO add your handling code here:
+        if (typeName.getText().equals("Ingrese el nombre completo del cliente")) {
+            typeName.setText("");
+            typeName.setForeground(Color.black);
+        }
+        if (typeId.getText().isEmpty()) {
+            typeId.setText("Ingrese el ID card del cliente");
+            typeId.setForeground(Color.gray);
+        }
+
+        if (typeBirth.getText().isEmpty()) {
+            typeBirth.setText("Ingrese la fecha de nacimiento");
+            typeBirth.setForeground(Color.gray);
+        }
+
+        if (typeEmail.getText().isEmpty()) {
+            typeEmail.setText("example@gmail.com");
+            typeEmail.setForeground(Color.gray);
+        }
+
+    }//GEN-LAST:event_typeNameMousePressed
+
+    private void typeIdMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeIdMousePressed
+        // TODO add your handling code here:
+        if (typeName.getText().isEmpty()) {
+            typeName.setText("Ingrese el nombre completo del cliente");
+            typeName.setForeground(Color.gray);
+        }
+        if (typeId.getText().equals("Ingrese el ID card del cliente")) {
+            typeId.setText("");
+            typeId.setForeground(Color.black);
+        }
+
+        if (typeBirth.getText().isEmpty()) {
+            typeBirth.setText("Ingrese la fecha de nacimiento");
+            typeBirth.setForeground(Color.gray);
+        }
+
+        if (typeEmail.getText().isEmpty()) {
+            typeEmail.setText("example@gmail.com");
+            typeEmail.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_typeIdMousePressed
+
+    private void typeBirthMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeBirthMousePressed
+        // TODO add your handling code here:
+        if (typeName.getText().isEmpty()) {
+            typeName.setText("Ingrese el nombre completo del cliente");
+            typeName.setForeground(Color.gray);
+        }
+        if (typeId.getText().isEmpty()) {
+            typeId.setText("Ingrese el ID card del cliente");
+            typeId.setForeground(Color.gray);
+        }
+
+        if (typeBirth.getText().equals("Ingrese la fecha de nacimiento")) {
+            typeBirth.setText("");
+            typeBirth.setForeground(Color.black);
+        }
+
+        if (typeEmail.getText().isEmpty()) {
+            typeEmail.setText("example@gmail.com");
+            typeEmail.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_typeBirthMousePressed
+
+    private void typeEmailMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeEmailMousePressed
+        // TODO add your handling code here:
+        if (typeName.getText().isEmpty()) {
+            typeName.setText("Ingrese el nombre completo del cliente");
+            typeName.setForeground(Color.gray);
+        }
+        if (typeId.getText().isEmpty()) {
+            typeId.setText("Ingrese el ID card del cliente");
+            typeId.setForeground(Color.gray);
+        }
+
+        if (typeBirth.getText().isEmpty()) {
+            typeBirth.setText("Ingrese la fecha de nacimiento");
+            typeBirth.setForeground(Color.gray);
+        }
+
+        if (typeEmail.getText().equals("example@gmail.com")) {
+            typeEmail.setText("");
+            typeEmail.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_typeEmailMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

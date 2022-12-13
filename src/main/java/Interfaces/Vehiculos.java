@@ -4,6 +4,8 @@
  */
 package Interfaces;
 
+import java.awt.Color;
+
 /**
  *
  * @author gblan
@@ -108,6 +110,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         typePlaca.setForeground(new java.awt.Color(153, 153, 153));
         typePlaca.setText("409425");
         typePlaca.setBorder(null);
+        typePlaca.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typePlacaMousePressed(evt);
+            }
+        });
         typePlaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typePlacaActionPerformed(evt);
@@ -126,6 +133,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         typeMarca.setForeground(new java.awt.Color(153, 153, 153));
         typeMarca.setText("Hyundai");
         typeMarca.setBorder(null);
+        typeMarca.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeMarcaMousePressed(evt);
+            }
+        });
         typeMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeMarcaActionPerformed(evt);
@@ -144,6 +156,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         typeModel.setForeground(new java.awt.Color(153, 153, 153));
         typeModel.setText("Accent");
         typeModel.setBorder(null);
+        typeModel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeModelMousePressed(evt);
+            }
+        });
         typeModel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeModelActionPerformed(evt);
@@ -162,6 +179,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         typeYear.setForeground(new java.awt.Color(153, 153, 153));
         typeYear.setText("2023");
         typeYear.setBorder(null);
+        typeYear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeYearMousePressed(evt);
+            }
+        });
         typeYear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeYearActionPerformed(evt);
@@ -180,6 +202,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         typeColor.setForeground(new java.awt.Color(153, 153, 153));
         typeColor.setText("Blanco");
         typeColor.setBorder(null);
+        typeColor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeColorMousePressed(evt);
+            }
+        });
         typeColor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeColorActionPerformed(evt);
@@ -198,6 +225,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         typeCC.setForeground(new java.awt.Color(153, 153, 153));
         typeCC.setText("250cc");
         typeCC.setBorder(null);
+        typeCC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeCCMousePressed(evt);
+            }
+        });
         typeCC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeCCActionPerformed(evt);
@@ -220,6 +252,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         typeEspacios.setForeground(new java.awt.Color(153, 153, 153));
         typeEspacios.setText("5");
         typeEspacios.setBorder(null);
+        typeEspacios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeEspaciosMousePressed(evt);
+            }
+        });
         typeEspacios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeEspaciosActionPerformed(evt);
@@ -238,6 +275,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         typeDayCost.setForeground(new java.awt.Color(153, 153, 153));
         typeDayCost.setText("30");
         typeDayCost.setBorder(null);
+        typeDayCost.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeDayCostMousePressed(evt);
+            }
+        });
         typeDayCost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeDayCostActionPerformed(evt);
@@ -256,6 +298,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         typeExtras.setForeground(new java.awt.Color(153, 153, 153));
         typeExtras.setText("Camara, sensores, barra");
         typeExtras.setBorder(null);
+        typeExtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeExtrasMousePressed(evt);
+            }
+        });
         typeExtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeExtrasActionPerformed(evt);
@@ -367,6 +414,467 @@ public class Vehiculos extends javax.swing.JInternalFrame {
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_updateBtnActionPerformed
+
+    private void typePlacaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typePlacaMousePressed
+        // TODO add your handling code here:
+        if (typePlaca.getText().equals("409425")) {
+            typePlaca.setText("");
+            typePlaca.setForeground(Color.black);
+        }
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2023");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeColor.getText().isEmpty()) {
+            typeColor.setText("Blanco");
+            typeColor.setForeground(Color.gray);
+        }
+
+        if (typeCC.getText().isEmpty()) {
+            typeColor.setText("250cc");
+            typeColor.setForeground(Color.gray);
+
+        }
+
+        if (typeEspacios.getText().isEmpty()) {
+            typeEspacios.setText("5");
+            typeEspacios.setForeground(Color.gray);
+
+        }
+
+        if (typeDayCost.getText().isEmpty()) {
+            typeDayCost.setText("30");
+            typeDayCost.setForeground(Color.gray);
+
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, sensores, barra");
+            typeExtras.setForeground(Color.gray);
+
+        }
+
+    }//GEN-LAST:event_typePlacaMousePressed
+
+    private void typeMarcaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeMarcaMousePressed
+        // TODO add your handling code here:
+
+        if (typePlaca.getText().isEmpty()) {
+            typePlaca.setText("409425");
+            typePlaca.setForeground(Color.gray);
+        }
+        if (typeMarca.getText().equals("Hyundai")) {
+            typeMarca.setText("");
+            typeMarca.setForeground(Color.black);
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2023");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeColor.getText().isEmpty()) {
+            typeColor.setText("Blanco");
+            typeColor.setForeground(Color.gray);
+        }
+
+        if (typeCC.getText().isEmpty()) {
+            typeColor.setText("250cc");
+            typeColor.setForeground(Color.gray);
+
+        }
+
+        if (typeEspacios.getText().isEmpty()) {
+            typeEspacios.setText("5");
+            typeEspacios.setForeground(Color.gray);
+
+        }
+
+        if (typeDayCost.getText().isEmpty()) {
+            typeDayCost.setText("30");
+            typeDayCost.setForeground(Color.gray);
+
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, sensores, barra");
+            typeExtras.setForeground(Color.gray);
+
+        }
+    }//GEN-LAST:event_typeMarcaMousePressed
+
+    private void typeModelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeModelMousePressed
+        // TODO add your handling code here:
+        if (typePlaca.getText().isEmpty()) {
+            typePlaca.setText("409425");
+            typePlaca.setForeground(Color.gray);
+        }
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+        }
+
+        if (typeModel.getText().equals("Accent")) {
+            typeModel.setText("");
+            typeModel.setForeground(Color.black);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2023");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeColor.getText().isEmpty()) {
+            typeColor.setText("Blanco");
+            typeColor.setForeground(Color.gray);
+        }
+
+        if (typeCC.getText().isEmpty()) {
+            typeColor.setText("250cc");
+            typeColor.setForeground(Color.gray);
+
+        }
+
+        if (typeEspacios.getText().isEmpty()) {
+            typeEspacios.setText("5");
+            typeEspacios.setForeground(Color.gray);
+
+        }
+
+        if (typeDayCost.getText().isEmpty()) {
+            typeDayCost.setText("30");
+            typeDayCost.setForeground(Color.gray);
+
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, sensores, barra");
+            typeExtras.setForeground(Color.gray);
+
+        }
+    }//GEN-LAST:event_typeModelMousePressed
+
+    private void typeYearMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeYearMousePressed
+        // TODO add your handling code here:
+        if (typePlaca.getText().isEmpty()) {
+            typePlaca.setText("409425");
+            typePlaca.setForeground(Color.gray);
+        }
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().equals("2023")) {
+            typeYear.setText("");
+            typeYear.setForeground(Color.black);
+        }
+
+        if (typeColor.getText().isEmpty()) {
+            typeColor.setText("Blanco");
+            typeColor.setForeground(Color.gray);
+        }
+
+        if (typeCC.getText().isEmpty()) {
+            typeColor.setText("250cc");
+            typeColor.setForeground(Color.gray);
+
+        }
+
+        if (typeEspacios.getText().isEmpty()) {
+            typeEspacios.setText("5");
+            typeEspacios.setForeground(Color.gray);
+
+        }
+
+        if (typeDayCost.getText().isEmpty()) {
+            typeDayCost.setText("30");
+            typeDayCost.setForeground(Color.gray);
+
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, sensores, barra");
+            typeExtras.setForeground(Color.gray);
+
+        }
+    }//GEN-LAST:event_typeYearMousePressed
+
+    private void typeColorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeColorMousePressed
+        // TODO add your handling code here:
+        if (typePlaca.getText().isEmpty()) {
+            typePlaca.setText("409425");
+            typePlaca.setForeground(Color.gray);
+        }
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2023");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeColor.getText().equals("Blanco")) {
+            typeColor.setText("");
+            typeColor.setForeground(Color.black);
+        }
+
+        if (typeCC.getText().isEmpty()) {
+            typeColor.setText("250cc");
+            typeColor.setForeground(Color.gray);
+
+        }
+
+        if (typeEspacios.getText().isEmpty()) {
+            typeEspacios.setText("5");
+            typeEspacios.setForeground(Color.gray);
+
+        }
+
+        if (typeDayCost.getText().isEmpty()) {
+            typeDayCost.setText("30");
+            typeDayCost.setForeground(Color.gray);
+
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, sensores, barra");
+            typeExtras.setForeground(Color.gray);
+
+        }
+    }//GEN-LAST:event_typeColorMousePressed
+
+    private void typeCCMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeCCMousePressed
+        // TODO add your handling code here:
+        if (typePlaca.getText().isEmpty()) {
+            typePlaca.setText("409425");
+            typePlaca.setForeground(Color.gray);
+        }
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2023");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeColor.getText().isEmpty()) {
+            typeColor.setText("Blanco");
+            typeColor.setForeground(Color.gray);
+        }
+
+        if (typeCC.getText().equals("250cc")) {
+            typeCC.setText("");
+            typeCC.setForeground(Color.black);
+
+        }
+
+        if (typeEspacios.getText().isEmpty()) {
+            typeEspacios.setText("5");
+            typeEspacios.setForeground(Color.gray);
+
+        }
+
+        if (typeDayCost.getText().isEmpty()) {
+            typeDayCost.setText("30");
+            typeDayCost.setForeground(Color.gray);
+
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, sensores, barra");
+            typeExtras.setForeground(Color.gray);
+
+        }
+    }//GEN-LAST:event_typeCCMousePressed
+
+    private void typeEspaciosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeEspaciosMousePressed
+        // TODO add your handling code here:
+        if (typePlaca.getText().isEmpty()) {
+            typePlaca.setText("409425");
+            typePlaca.setForeground(Color.gray);
+        }
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2023");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeColor.getText().isEmpty()) {
+            typeColor.setText("Blanco");
+            typeColor.setForeground(Color.gray);
+        }
+
+        if (typeCC.getText().isEmpty()) {
+            typeColor.setText("250cc");
+            typeColor.setForeground(Color.gray);
+
+        }
+
+        if (typeEspacios.getText().equals("5")) {
+            typeEspacios.setText("");
+            typeEspacios.setForeground(Color.black);
+
+        }
+
+        if (typeDayCost.getText().isEmpty()) {
+            typeDayCost.setText("30");
+            typeDayCost.setForeground(Color.gray);
+
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, sensores, barra");
+            typeExtras.setForeground(Color.gray);
+
+        }
+    }//GEN-LAST:event_typeEspaciosMousePressed
+
+    private void typeDayCostMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeDayCostMousePressed
+        // TODO add your handling code here:
+        if (typePlaca.getText().isEmpty()) {
+            typePlaca.setText("409425");
+            typePlaca.setForeground(Color.gray);
+        }
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2023");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeColor.getText().isEmpty()) {
+            typeColor.setText("Blanco");
+            typeColor.setForeground(Color.gray);
+        }
+
+        if (typeCC.getText().isEmpty()) {
+            typeColor.setText("250cc");
+            typeColor.setForeground(Color.gray);
+
+        }
+
+        if (typeEspacios.getText().isEmpty()) {
+            typeEspacios.setText("5");
+            typeEspacios.setForeground(Color.gray);
+
+        }
+
+        if (typeDayCost.getText().equals("30")) {
+            typeDayCost.setText("");
+            typeDayCost.setForeground(Color.black);
+
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, sensores, barra");
+            typeExtras.setForeground(Color.gray);
+
+        }
+    }//GEN-LAST:event_typeDayCostMousePressed
+
+    private void typeExtrasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeExtrasMousePressed
+        // TODO add your handling code here:
+        if (typePlaca.getText().isEmpty()) {
+            typePlaca.setText("409425");
+            typePlaca.setForeground(Color.gray);
+        }
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2023");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeColor.getText().isEmpty()) {
+            typeColor.setText("Blanco");
+            typeColor.setForeground(Color.gray);
+        }
+
+        if (typeCC.getText().isEmpty()) {
+            typeColor.setText("250cc");
+            typeColor.setForeground(Color.gray);
+
+        }
+
+        if (typeEspacios.getText().isEmpty()) {
+            typeEspacios.setText("5");
+            typeEspacios.setForeground(Color.gray);
+
+        }
+
+        if (typeDayCost.getText().isEmpty()) {
+            typeDayCost.setText("30");
+            typeDayCost.setForeground(Color.gray);
+
+        }
+
+        if (typeExtras.getText().equals("Camara, sensores, barra")) {
+            typeExtras.setText("");
+            typeExtras.setForeground(Color.black);
+
+        }
+    }//GEN-LAST:event_typeExtrasMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
