@@ -435,6 +435,40 @@ public class Vehiculos extends javax.swing.JInternalFrame {
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
         // TODO add your handling code here:
+        listaVehiculo.elimina(new Vehiculo(typePlaca.getText(), typeMarca.getText(),
+                typeModel.getText(), Integer.parseInt(typeYear.getText()), typeColor.getText(),
+                typeCC.getText(), String.valueOf(gasCombo.getSelectedItem()),
+                Integer.parseInt(typeEspacios.getText()), Integer.parseInt(typeDayCost.getText()),
+                typeExtras.getText(), String.valueOf(statusCombo.getSelectedItem())));
+
+        panel.setText(String.valueOf(listaVehiculo));
+
+        typePlaca.setText("409425");
+        typePlaca.setForeground(Color.gray);
+
+        typeMarca.setText("Hyundai");
+        typeMarca.setForeground(Color.gray);
+
+        typeModel.setText("Accent");
+        typeModel.setForeground(Color.gray);
+
+        typeYear.setText("2023");
+        typeYear.setForeground(Color.gray);
+
+        typeColor.setText("Blanco");
+        typeColor.setForeground(Color.gray);
+
+        typeCC.setText("250cc");
+        typeCC.setForeground(Color.gray);
+
+        typeEspacios.setText("5");
+        typeEspacios.setForeground(Color.gray);
+
+        typeDayCost.setText("30");
+        typeDayCost.setForeground(Color.gray);
+
+        typeExtras.setText("Camara, sensores, barra");
+        typeExtras.setForeground(Color.gray);
     }//GEN-LAST:event_deleteBtnActionPerformed
 
     private void newBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newBtnActionPerformed
@@ -479,6 +513,40 @@ public class Vehiculos extends javax.swing.JInternalFrame {
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
+        listaVehiculo.modifica(new Vehiculo(typePlaca.getText(), typeMarca.getText(),
+                typeModel.getText(), Integer.parseInt(typeYear.getText()), typeColor.getText(),
+                typeCC.getText(), String.valueOf(gasCombo.getSelectedItem()),
+                Integer.parseInt(typeEspacios.getText()), Integer.parseInt(typeDayCost.getText()),
+                typeExtras.getText(), String.valueOf(statusCombo.getSelectedItem())));
+
+        panel.setText(String.valueOf(listaVehiculo));
+
+        typePlaca.setText("409425");
+        typePlaca.setForeground(Color.gray);
+
+        typeMarca.setText("Hyundai");
+        typeMarca.setForeground(Color.gray);
+
+        typeModel.setText("Accent");
+        typeModel.setForeground(Color.gray);
+
+        typeYear.setText("2023");
+        typeYear.setForeground(Color.gray);
+
+        typeColor.setText("Blanco");
+        typeColor.setForeground(Color.gray);
+
+        typeCC.setText("250cc");
+        typeCC.setForeground(Color.gray);
+
+        typeEspacios.setText("5");
+        typeEspacios.setForeground(Color.gray);
+
+        typeDayCost.setText("30");
+        typeDayCost.setForeground(Color.gray);
+
+        typeExtras.setText("Camara, sensores, barra");
+        typeExtras.setForeground(Color.gray);
     }//GEN-LAST:event_updateBtnActionPerformed
 
     private void typePlacaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typePlacaMousePressed
@@ -734,8 +802,8 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         }
 
         if (typeCC.getText().isEmpty()) {
-            typeColor.setText("250cc");
-            typeColor.setForeground(Color.gray);
+            typeCC.setText("250cc");
+            typeCC.setForeground(Color.gray);
 
         }
 
@@ -1018,8 +1086,8 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         }
 
         if (typeCC.getText().isEmpty()) {
-            typeColor.setText("250cc");
-            typeColor.setForeground(Color.gray);
+            typeCC.setText("250cc");
+            typeCC.setForeground(Color.gray);
 
         }
 
@@ -1079,9 +1147,9 @@ public class Vehiculos extends javax.swing.JInternalFrame {
 
         typeExtras.setText(buscado.getExtras());
         typeExtras.setForeground(Color.black);
-        
+
         gasCombo.setSelectedItem(buscado.getCombustible());
-        
+
         statusCombo.setSelectedItem(buscado.getEstado());
 
     }//GEN-LAST:event_searchBtnActionPerformed
