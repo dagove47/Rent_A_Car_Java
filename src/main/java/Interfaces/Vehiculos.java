@@ -63,6 +63,9 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         statusCombo = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         panel = new javax.swing.JTextArea();
+        deleteBtn = new javax.swing.JButton();
+        newBtn = new javax.swing.JButton();
+        updateBtn = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(910, 690));
 
@@ -279,6 +282,30 @@ public class Vehiculos extends javax.swing.JInternalFrame {
 
         bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 900, 260));
 
+        deleteBtn.setText("Eliminar");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
+        bg.add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, 240, 40));
+
+        newBtn.setText("Nuevo");
+        newBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newBtnActionPerformed(evt);
+            }
+        });
+        bg.add(newBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 240, 40));
+
+        updateBtn.setText("Actualizar");
+        updateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateBtnActionPerformed(evt);
+            }
+        });
+        bg.add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 240, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -329,12 +356,25 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_typeExtrasActionPerformed
 
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteBtnActionPerformed
+
+    private void newBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newBtnActionPerformed
+
+    private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JLabel ccText;
     private javax.swing.JLabel colorText;
     private javax.swing.JLabel dayCostText;
+    private javax.swing.JButton deleteBtn;
     private javax.swing.JLabel espaciosText;
     private javax.swing.JLabel extrasText;
     private javax.swing.JComboBox<String> gasCombo;
@@ -353,6 +393,7 @@ public class Vehiculos extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel marcaText;
     private javax.swing.JLabel modelText;
+    private javax.swing.JButton newBtn;
     private javax.swing.JTextArea panel;
     private javax.swing.JLabel placaText;
     private javax.swing.JComboBox<String> statusCombo;
@@ -367,6 +408,7 @@ public class Vehiculos extends javax.swing.JInternalFrame {
     private javax.swing.JTextField typeModel;
     private javax.swing.JTextField typePlaca;
     private javax.swing.JTextField typeYear;
+    private javax.swing.JButton updateBtn;
     private javax.swing.JLabel yearText;
     // End of variables declaration//GEN-END:variables
 }
