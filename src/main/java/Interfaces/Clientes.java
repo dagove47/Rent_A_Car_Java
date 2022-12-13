@@ -45,11 +45,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         jSeparator6 = new javax.swing.JSeparator();
         lvText = new javax.swing.JLabel();
         lvOptions = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         addBtn = new javax.swing.JButton();
         updateBtn = new javax.swing.JButton();
         deleteBtn = new javax.swing.JButton();
+        textPanel = new javax.swing.JScrollPane();
+        textClients = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(null);
@@ -69,7 +69,7 @@ public class Clientes extends javax.swing.JInternalFrame {
             .addGroup(headerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(761, Short.MAX_VALUE))
+                .addContainerGap(801, Short.MAX_VALUE))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -79,7 +79,7 @@ public class Clientes extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        bg.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 40));
+        bg.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 40));
 
         tittle.setFont(new java.awt.Font("Roboto Black", 1, 36)); // NOI18N
         tittle.setText("Registro de Clientes");
@@ -165,22 +165,6 @@ public class Clientes extends javax.swing.JInternalFrame {
         });
         bg.add(lvOptions, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 260, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Nombre", "ID Card", "Fecha de Nacimiento", "Correo Electrónico", "Categoría"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 840, 330));
-
         addBtn.setText("Agregar Nuevo Cliente");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,6 +184,12 @@ public class Clientes extends javax.swing.JInternalFrame {
         deleteBtn.setText("Eliminar Cliente");
         bg.add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 270, 50));
 
+        textClients.setColumns(20);
+        textClients.setRows(5);
+        textPanel.setViewportView(textClients);
+
+        bg.add(textPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 880, 290));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -208,7 +198,9 @@ public class Clientes extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -248,15 +240,15 @@ public class Clientes extends javax.swing.JInternalFrame {
     private javax.swing.JPanel header;
     private javax.swing.JLabel idText;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JTable jTable1;
     private javax.swing.JComboBox<String> lvOptions;
     private javax.swing.JLabel lvText;
     private javax.swing.JLabel nameText;
+    private javax.swing.JTextArea textClients;
+    private javax.swing.JScrollPane textPanel;
     private javax.swing.JLabel tittle;
     private javax.swing.JTextField typeBirth;
     private javax.swing.JTextField typeEmail;
