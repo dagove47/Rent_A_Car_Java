@@ -30,18 +30,18 @@ public class Rent extends javax.swing.JInternalFrame {
         header = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         tittle = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        extrasText = new javax.swing.JLabel();
+        typeDay = new javax.swing.JTextField();
+        minPassText = new javax.swing.JLabel();
+        dayText = new javax.swing.JLabel();
+        typeExtras = new javax.swing.JTextField();
+        typeMinPass = new javax.swing.JTextField();
+        marcaText = new javax.swing.JLabel();
+        typeMarca = new javax.swing.JTextField();
+        modelText = new javax.swing.JLabel();
+        typeModel = new javax.swing.JTextField();
+        yearText = new javax.swing.JLabel();
+        typeYear = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
@@ -49,8 +49,8 @@ public class Rent extends javax.swing.JInternalFrame {
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
+        soliAreaText = new javax.swing.JTextArea();
+        addBtn = new javax.swing.JButton();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -83,67 +83,67 @@ public class Rent extends javax.swing.JInternalFrame {
         tittle.setText("Solicitud de Alquiler");
         bg.add(tittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        jLabel2.setText("Extras:");
-        bg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+        extrasText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        extrasText.setText("Extras:");
+        bg.add(extrasText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setText("14");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        typeDay.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        typeDay.setForeground(new java.awt.Color(153, 153, 153));
+        typeDay.setText("14");
+        typeDay.setBorder(null);
+        typeDay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                typeDayActionPerformed(evt);
             }
         });
-        bg.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 240, -1));
+        bg.add(typeDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 240, -1));
 
-        jLabel3.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        jLabel3.setText("Minimo de Pasajeros: ");
-        bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        minPassText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        minPassText.setText("Minimo de Pasajeros: ");
+        bg.add(minPassText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        jLabel4.setText("Cantidad de días: ");
-        bg.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        dayText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        dayText.setText("Cantidad de días: ");
+        bg.add(dayText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
-        jTextField2.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField2.setText("Camara, asientos de cuero, sensores");
-        jTextField2.setBorder(null);
-        bg.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 240, -1));
+        typeExtras.setForeground(new java.awt.Color(153, 153, 153));
+        typeExtras.setText("Camara, asientos de cuero, sensores");
+        typeExtras.setBorder(null);
+        bg.add(typeExtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 240, -1));
 
-        jTextField3.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField3.setText("5");
-        jTextField3.setBorder(null);
-        bg.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 240, -1));
+        typeMinPass.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        typeMinPass.setForeground(new java.awt.Color(153, 153, 153));
+        typeMinPass.setText("5");
+        typeMinPass.setBorder(null);
+        bg.add(typeMinPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 240, -1));
 
-        jLabel5.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        jLabel5.setText("Marca: ");
-        bg.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        marcaText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        marcaText.setText("Marca: ");
+        bg.add(marcaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
-        jTextField4.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField4.setText("Hyundai");
-        jTextField4.setBorder(null);
-        bg.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 240, -1));
+        typeMarca.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        typeMarca.setForeground(new java.awt.Color(153, 153, 153));
+        typeMarca.setText("Hyundai");
+        typeMarca.setBorder(null);
+        bg.add(typeMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 240, -1));
 
-        jLabel6.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        jLabel6.setText("Modelo:");
-        bg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        modelText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        modelText.setText("Modelo:");
+        bg.add(modelText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
-        jTextField5.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField5.setText("Accent");
-        jTextField5.setBorder(null);
-        bg.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 240, -1));
+        typeModel.setForeground(new java.awt.Color(153, 153, 153));
+        typeModel.setText("Accent");
+        typeModel.setBorder(null);
+        bg.add(typeModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 240, -1));
 
-        jLabel7.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        jLabel7.setText("Año:");
-        bg.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+        yearText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        yearText.setText("Año:");
+        bg.add(yearText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
-        jTextField6.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField6.setText("2017");
-        jTextField6.setBorder(null);
-        bg.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 240, -1));
+        typeYear.setForeground(new java.awt.Color(153, 153, 153));
+        typeYear.setText("2017");
+        typeYear.setBorder(null);
+        bg.add(typeYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 240, -1));
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 240, 10));
@@ -163,19 +163,19 @@ public class Rent extends javax.swing.JInternalFrame {
         jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 240, 10));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        soliAreaText.setColumns(20);
+        soliAreaText.setRows(5);
+        jScrollPane1.setViewportView(soliAreaText);
 
         bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 860, 290));
 
-        jButton2.setText("Agregar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        addBtn.setText("Agregar");
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                addBtnActionPerformed(evt);
             }
         });
-        bg.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 320, 140, 30));
+        bg.add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 320, 140, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -193,26 +193,22 @@ public class Rent extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void typeDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeDayActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_typeDayActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_addBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addBtn;
     private javax.swing.JPanel bg;
+    private javax.swing.JLabel dayText;
+    private javax.swing.JLabel extrasText;
     private javax.swing.JPanel header;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
@@ -220,13 +216,17 @@ public class Rent extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JLabel marcaText;
+    private javax.swing.JLabel minPassText;
+    private javax.swing.JLabel modelText;
+    private javax.swing.JTextArea soliAreaText;
     private javax.swing.JLabel tittle;
+    private javax.swing.JTextField typeDay;
+    private javax.swing.JTextField typeExtras;
+    private javax.swing.JTextField typeMarca;
+    private javax.swing.JTextField typeMinPass;
+    private javax.swing.JTextField typeModel;
+    private javax.swing.JTextField typeYear;
+    private javax.swing.JLabel yearText;
     // End of variables declaration//GEN-END:variables
 }
