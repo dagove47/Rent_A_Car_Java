@@ -74,9 +74,9 @@ public class Clientes extends javax.swing.JInternalFrame {
         headerLayout.setHorizontalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(801, Short.MAX_VALUE))
+                .addContainerGap(802, Short.MAX_VALUE))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +86,7 @@ public class Clientes extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        bg.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 40));
+        bg.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 960, 40));
 
         tittle.setFont(new java.awt.Font("Roboto Black", 1, 36)); // NOI18N
         tittle.setText("Registro de Clientes");
@@ -292,12 +292,30 @@ public class Clientes extends javax.swing.JInternalFrame {
 
         typeId.setText("example@gmail.com");
         typeId.setForeground(Color.gray);
-        
+
         textClients.setText(String.valueOf(listaCliente));
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
+        listaCliente.modifica(new Cliente(Integer.parseInt(typeId.getText()),
+                typeName.getText(), typeBirth.getText(), typeEmail.getText(),
+                String.valueOf(lvOptions.getSelectedItem())));
+
+        textClients.setText(String.valueOf(listaCliente));
+
+        typeName.setText("Ingrese el nombre completo del cliente");
+        typeName.setForeground(Color.gray);
+
+        typeId.setText("Ingrese el ID card del cliente");
+        typeId.setForeground(Color.gray);
+
+        typeBirth.setText("Ingrese la fecha de nacimiento");
+        typeBirth.setForeground(Color.gray);
+
+        typeEmail.setText("example@gmail.com");
+        typeEmail.setForeground(Color.gray);
+
     }//GEN-LAST:event_updateBtnActionPerformed
 
     private void typeNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeNameMousePressed

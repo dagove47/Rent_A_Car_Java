@@ -45,8 +45,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         carText = new javax.swing.JLabel();
         rentBtn = new javax.swing.JPanel();
         rentText = new javax.swing.JLabel();
+        asignarBtn = new javax.swing.JPanel();
+        asignarText = new javax.swing.JLabel();
         graphicsBtn = new javax.swing.JPanel();
         graphicsText = new javax.swing.JLabel();
+        devolBtn = new javax.swing.JPanel();
+        devolText = new javax.swing.JLabel();
         subMenu = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -238,6 +242,35 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addComponent(rentText, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
         );
 
+        asignarBtn.setBackground(new java.awt.Color(0, 39, 54));
+
+        asignarText.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        asignarText.setForeground(new java.awt.Color(255, 255, 255));
+        asignarText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        asignarText.setText("Asignar Vehiculo");
+        asignarText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                asignarTextMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                asignarTextMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                asignarTextMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout asignarBtnLayout = new javax.swing.GroupLayout(asignarBtn);
+        asignarBtn.setLayout(asignarBtnLayout);
+        asignarBtnLayout.setHorizontalGroup(
+            asignarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(asignarText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        asignarBtnLayout.setVerticalGroup(
+            asignarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(asignarText, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+        );
+
         graphicsBtn.setBackground(new java.awt.Color(0, 39, 54));
 
         graphicsText.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -267,6 +300,41 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addComponent(graphicsText, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        devolBtn.setBackground(new java.awt.Color(0, 39, 54));
+
+        devolText.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        devolText.setForeground(new java.awt.Color(255, 255, 255));
+        devolText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        devolText.setText("Devoluciones");
+        devolText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                devolTextMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                devolTextMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                devolTextMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout devolBtnLayout = new javax.swing.GroupLayout(devolBtn);
+        devolBtn.setLayout(devolBtnLayout);
+        devolBtnLayout.setHorizontalGroup(
+            devolBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(devolBtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(devolText, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        devolBtnLayout.setVerticalGroup(
+            devolBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, devolBtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(devolText, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout menuBgLayout = new javax.swing.GroupLayout(menuBg);
         menuBg.setLayout(menuBgLayout);
         menuBgLayout.setHorizontalGroup(
@@ -275,7 +343,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addComponent(clientBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(carBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(rentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(graphicsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(asignarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(graphicsBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(devolBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         menuBgLayout.setVerticalGroup(
             menuBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,9 +358,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(carBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(asignarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(devolBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(graphicsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         bg.add(menuBg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 720));
@@ -421,6 +495,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void rentTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rentTextMouseClicked
         // TODO add your handling code here:
+        Rent r = new Rent();
+        r.setSize(950, 690);
+        r.setLocation(0, 0);
+
+        subMenu.removeAll();
+        subMenu.add(r, BorderLayout.CENTER);
+        subMenu.revalidate();
+        subMenu.repaint();
+
+        r.setVisible(true);
     }//GEN-LAST:event_rentTextMouseClicked
 
     private void graphicsTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_graphicsTextMouseEntered
@@ -438,6 +522,34 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void graphicsTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_graphicsTextMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_graphicsTextMouseClicked
+
+    private void asignarTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignarTextMouseEntered
+        // TODO add your handling code here:
+        asignarBtn.setBackground(new Color(0, 61, 83));
+
+    }//GEN-LAST:event_asignarTextMouseEntered
+
+    private void asignarTextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignarTextMouseExited
+        // TODO add your handling code here:
+        asignarBtn.setBackground(new Color(0, 39, 54));
+
+    }//GEN-LAST:event_asignarTextMouseExited
+
+    private void asignarTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignarTextMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_asignarTextMouseClicked
+
+    private void devolTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_devolTextMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_devolTextMouseClicked
+
+    private void devolTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_devolTextMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_devolTextMouseEntered
+
+    private void devolTextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_devolTextMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_devolTextMouseExited
 
     /**
      * @param args the command line arguments
@@ -475,11 +587,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel asignarBtn;
+    private javax.swing.JLabel asignarText;
     private javax.swing.JPanel bg;
     private javax.swing.JPanel carBtn;
     private javax.swing.JLabel carText;
     private javax.swing.JPanel clientBtn;
     private javax.swing.JLabel clientText;
+    private javax.swing.JPanel devolBtn;
+    private javax.swing.JLabel devolText;
     private javax.swing.JPanel exitBtn;
     private javax.swing.JLabel exitText;
     private javax.swing.JPanel graphicsBtn;

@@ -23,6 +23,7 @@ public class Solicitud {
     private String modelo;
     private String anno;
     private String extras;
+    public String estado; 
     
     public Solicitud(){}
     
@@ -33,7 +34,17 @@ public class Solicitud {
     * dede cualquier otra clase.
     */    
     //</editor-fold>
-    
+
+    public Solicitud(int diasAlquiler, int minimoPasajeros, String marca, String modelo, String anno, String extras, String estado) {
+        this.diasAlquiler = diasAlquiler;
+        this.minimoPasajeros = minimoPasajeros;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anno = anno;
+        this.extras = extras;
+        this.estado = estado;
+    }
+
     public int getDiasAlquiler() {
         return diasAlquiler;
     }
@@ -81,33 +92,29 @@ public class Solicitud {
     public void setExtras(String extras) {
         this.extras = extras;
     }
-    
-    //<editor-fold defaultstate="collapsed" desc="Solicitud(Parametros)">
-    /*
-    * Solicitud con todos los parametros que le pertenecen a 
-    * solicitud para que los reconozca cunado el usuario los 
-    * digite.
-    */    
-    //</editor-fold>
-    
-    public Solicitud(int diasAlquiler, int minimoPasajeros, String marca, String modelo, String anno, String extras){
-        this.diasAlquiler = diasAlquiler;
-        this.minimoPasajeros = minimoPasajeros;
-        this.marca = marca;
-        this.modelo = modelo;
-        this.anno = anno;
-        this.extras = extras;
+
+    public String getEstado() {
+        return estado;
     }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+    
+    
+    
     
     //<editor-fold defaultstate="collapsed" desc="Override">
     /*
     * Se crea un string que añade todos los parametros 
     * y un string que designa que es cada parametro.
     */    
-    //</editor-fold>
-    
+    //</editor-fo
+
     @Override
-    public String toString(){return "Solicitud{" + "diasAlquiler="+diasAlquiler+", minimoPasajeros="+minimoPasajeros+"," +
-            " marca="+marca+" modelo="+modelo+" anno="+anno+" extras="+extras+'}';
+    public String toString() {
+        return "Solicitud{" + "diasAlquiler=" + diasAlquiler + ", minimoPasajeros=" + minimoPasajeros 
+                + ", marca=" + marca + ", modelo=" + modelo + ", anno=" + anno + ", extras=" + extras + ", estado=" + estado + '}';
     }
 }
