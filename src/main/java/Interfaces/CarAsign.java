@@ -68,7 +68,7 @@ public class CarAsign extends javax.swing.JInternalFrame {
         header.setBackground(new java.awt.Color(0, 78, 106));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Alquiler");
+        jLabel1.setText("Asignación de Vehiculos");
 
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
         header.setLayout(headerLayout);
