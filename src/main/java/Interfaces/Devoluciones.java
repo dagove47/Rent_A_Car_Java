@@ -126,7 +126,7 @@ public class Devoluciones extends javax.swing.JInternalFrame {
                 attendBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(attendBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 200, 140, 30));
+        jPanel1.add(attendBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 200, 30));
 
         dayText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         dayText.setText("Cedula de Cliente");

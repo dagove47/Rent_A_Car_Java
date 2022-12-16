@@ -203,7 +203,11 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="proflieIcon" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="proflieIcon" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -225,9 +229,8 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\gblan\OneDrive - Universidad Fid&#xe9;litas\Ufid&#xe9;litas\3 Cuatrimestre\Estructura de Datos\Proyecto\Iconos\Proflie_Icon2__1_-removebg-preview.png"/>
+                      <Image iconType="3" name="/Iconos/Logo.jpeg"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="NombrePersona"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -433,6 +436,9 @@
                   <Color blue="36" green="27" red="0" type="rgb"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="devolBtnMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">

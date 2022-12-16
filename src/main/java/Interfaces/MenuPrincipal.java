@@ -18,12 +18,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * Creates new form MenuPrincipal
      */
     int xPos, yPos;
-    
+
     ListaVehiculo listaVehiculo = new ListaVehiculo();
     ColaSolicitud solicitud = new ColaSolicitud();
     ListaCliente clients = new ListaCliente();
     PilaAsignar asignado = new PilaAsignar();
-    
 
     public MenuPrincipal() {
         initComponents();
@@ -146,14 +145,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         proflieIcon.setFont(new java.awt.Font("Roboto Light", 1, 24)); // NOI18N
         proflieIcon.setForeground(new java.awt.Color(255, 255, 255));
-        proflieIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\gblan\\OneDrive - Universidad Fidélitas\\Ufidélitas\\3 Cuatrimestre\\Estructura de Datos\\Proyecto\\Iconos\\Proflie_Icon2__1_-removebg-preview.png")); // NOI18N
-        proflieIcon.setText("NombrePersona");
+        proflieIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Logo.jpeg"))); // NOI18N
 
         javax.swing.GroupLayout proflieBgLayout = new javax.swing.GroupLayout(proflieBg);
         proflieBg.setLayout(proflieBgLayout);
         proflieBgLayout.setHorizontalGroup(
             proflieBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(proflieIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, proflieBgLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(proflieIcon)
+                .addGap(114, 114, 114))
         );
         proflieBgLayout.setVerticalGroup(
             proflieBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,6 +309,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
 
         devolBtn.setBackground(new java.awt.Color(0, 39, 54));
+        devolBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                devolBtnMouseClicked(evt);
+            }
+        });
 
         devolText.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         devolText.setForeground(new java.awt.Color(255, 255, 255));
@@ -529,6 +535,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void graphicsTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_graphicsTextMouseClicked
         // TODO add your handling code here:
+        AnalisisDatos a = new AnalisisDatos();
+        a.setSize(950, 690);
+        a.setLocation(0, 0);
+
+        subMenu.removeAll();
+        subMenu.add(a, BorderLayout.CENTER);
+        subMenu.revalidate();
+        subMenu.repaint();
+
+        a.setVisible(true);
     }//GEN-LAST:event_graphicsTextMouseClicked
 
     private void asignarTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignarTextMouseEntered
@@ -545,19 +561,49 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void asignarTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignarTextMouseClicked
         // TODO add your handling code here:
+        CarAsign a = new CarAsign();
+        a.setSize(950, 690);
+        a.setLocation(0, 0);
+
+        subMenu.removeAll();
+        subMenu.add(a, BorderLayout.CENTER);
+        subMenu.revalidate();
+        subMenu.repaint();
+
+        a.setVisible(true);
+
     }//GEN-LAST:event_asignarTextMouseClicked
 
     private void devolTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_devolTextMouseClicked
         // TODO add your handling code here:
+        Devoluciones d = new Devoluciones();
+        d.setSize(950, 690);
+        d.setLocation(0, 0);
+
+        subMenu.removeAll();
+        subMenu.add(d, BorderLayout.CENTER);
+        subMenu.revalidate();
+        subMenu.repaint();
+
+        d.setVisible(true);
     }//GEN-LAST:event_devolTextMouseClicked
 
     private void devolTextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_devolTextMouseEntered
         // TODO add your handling code here:
+        devolBtn.setBackground(new Color(0, 61, 83));
+
     }//GEN-LAST:event_devolTextMouseEntered
 
     private void devolTextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_devolTextMouseExited
         // TODO add your handling code here:
+        devolBtn.setBackground(new Color(0, 39, 54));
+
     }//GEN-LAST:event_devolTextMouseExited
+
+    private void devolBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_devolBtnMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_devolBtnMouseClicked
 
     /**
      * @param args the command line arguments
