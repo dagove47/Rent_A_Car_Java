@@ -162,7 +162,7 @@ public class Vehiculo {
     @Override
     public String toString(){
         return "Vehiculo{" + "placa="+placa+", marca="+marca+", modelo="+modelo+
-                ", anno="+anno+", color="+color+", cilindrada="+cilindrada+
+                ", año="+anno+", color="+color+", cilindrada="+cilindrada+
                 ", combustible="+combustible+", pasajeros="+pasajeros+
                 ", precio="+precioDia+", extras="+extras+", estado="+estado+'}';
     }

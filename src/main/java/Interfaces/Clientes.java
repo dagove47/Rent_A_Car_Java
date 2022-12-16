@@ -215,7 +215,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         textClients.setRows(5);
         textPanel.setViewportView(textClients);
 
-        bg.add(textPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 880, 230));
+        bg.add(textPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 880, 230));
 
         typeSearch.setForeground(new java.awt.Color(153, 153, 153));
         typeSearch.setText("Busqueda por # de cedula");

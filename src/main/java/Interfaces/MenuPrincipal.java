@@ -4,6 +4,7 @@
  */
 package Interfaces;
 
+import Rent_A_Car.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 
@@ -17,6 +18,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * Creates new form MenuPrincipal
      */
     int xPos, yPos;
+    
+    ListaVehiculo listaVehiculo = new ListaVehiculo();
+    ColaSolicitud solicitud = new ColaSolicitud();
+    ListaCliente clients = new ListaCliente();
+    PilaAsignar asignado = new PilaAsignar();
+    
 
     public MenuPrincipal() {
         initComponents();
@@ -470,6 +477,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void carTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carTextMouseClicked
         // TODO add your handling code here:
         Vehiculos v = new Vehiculos();
+        v.setListaVehiculo(listaVehiculo);
         v.setSize(950, 690);
         v.setLocation(0, 0);
 

@@ -133,12 +133,12 @@ public class ListaVehiculo {
     }
 
     public Vehiculo buscar(String placa) {
-        
+
         if (cabeza != null) {
-            NodoV aux = cabeza; 
-            
+            NodoV aux = cabeza;
+
             while (aux != null && !(aux.getDato().getPlaca().equals(placa))) {
-                aux = aux.getNext(); 
+                aux = aux.getNext();
             }
 
             if (aux != null && (aux.getDato().getPlaca().equals(placa))) {
@@ -146,7 +146,7 @@ public class ListaVehiculo {
                 search = aux.getDato();
             }
         }
-        
+
         return search;
     }
 
@@ -172,4 +172,62 @@ public class ListaVehiculo {
         }
         return s;
     }
+    
+    
+    public String placa() {
+        String objeto = this.cabeza.getDato().getPlaca();
+        return "" + objeto;
+    }
+
+    public String marca() {
+        String objeto = this.cabeza.getDato().getMarca();
+        return objeto;
+    }
+
+    public String modelo() {
+        String objeto = this.cabeza.getDato().getModelo();
+        return objeto;
+    }
+
+    public int year() {
+        int objeto = this.cabeza.getDato().getAnno();
+        return objeto;
+    }
+    
+    public  String color(){
+        String objeto = this.cabeza.getDato().getColor();
+        return objeto; 
+    }
+    
+    public String cilindrada(){
+        String objeto = this.cabeza.getDato().getCilindrada();
+        return objeto; 
+    }
+    
+    public String combustible(){
+        String objeto = this.cabeza.getDato().getCombustible();
+        return objeto;
+    }
+    
+    public int pasajeros(){
+        int objeto = this.cabeza.getDato().getPasajeros();
+        return objeto;
+    }
+    
+    public int precioDia(){
+        int objeto = this.cabeza.getDato().getAnno();
+        return objeto;
+    }
+    
+    public String extras(){
+        String objeto = this.cabeza.getDato().getExtras();
+        return objeto;
+    }
+    
+    public String estado(){
+        String objeto = this.cabeza.getDato().getEstado();
+        return objeto;
+    }
+    
+    
 }
