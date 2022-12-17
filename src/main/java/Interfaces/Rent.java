@@ -224,6 +224,7 @@ public class Rent extends javax.swing.JInternalFrame {
         jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 240, 10));
 
+        soliAreaText.setEditable(false);
         soliAreaText.setColumns(20);
         soliAreaText.setRows(5);
         jScrollPane1.setViewportView(soliAreaText);
