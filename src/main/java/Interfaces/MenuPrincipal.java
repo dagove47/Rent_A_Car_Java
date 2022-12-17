@@ -19,7 +19,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     int xPos, yPos;
 
-    ListaVehiculo listaVehiculo = new ListaVehiculo();
     Rent r = new Rent();
     Clientes c = new Clientes();
     Vehiculos v = new Vehiculos();
@@ -482,7 +481,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void carTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carTextMouseClicked
         // TODO add your handling code here:
-        v.setListaVehiculo(listaVehiculo);
         v.setSize(950, 690);
         v.setLocation(0, 0);
 

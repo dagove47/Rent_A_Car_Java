@@ -116,6 +116,10 @@ public class ColaSolicitud {
         }
         return aux;
     }
+    
+    public Solicitud obtenerInfo(){
+        return frente.getDato();
+    }
     //<editor-fold defaultstate="collapsed" desc="Override">
     /*
     * El override convierte la lista en un string 

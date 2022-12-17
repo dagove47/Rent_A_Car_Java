@@ -4,6 +4,10 @@
  */
 package Interfaces;
 
+import Rent_A_Car.ListaVehiculo;
+import Rent_A_Car.PilaAsignar;
+import java.awt.Color;
+
 /**
  *
  * @author gblan
@@ -13,6 +17,9 @@ public class Devoluciones extends javax.swing.JInternalFrame {
     /**
      * Creates new form Devoluciones
      */
+    static ListaVehiculo listaVehiculo = new ListaVehiculo();
+    static PilaAsignar asignados = new PilaAsignar();
+    
     public Devoluciones() {
         initComponents();
     }
@@ -30,17 +37,17 @@ public class Devoluciones extends javax.swing.JInternalFrame {
         header = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         tittle = new javax.swing.JLabel();
-        typeDay = new javax.swing.JTextField();
+        typeID = new javax.swing.JTextField();
         minPassText = new javax.swing.JLabel();
-        typeMinPass = new javax.swing.JTextField();
+        typePlaca = new javax.swing.JTextField();
         marcaText = new javax.swing.JLabel();
-        typeMarca = new javax.swing.JTextField();
+        typeEstado = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         asignarAreaText = new javax.swing.JTextArea();
-        attendBtn = new javax.swing.JButton();
+        devolverBtn = new javax.swing.JButton();
         dayText = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -74,36 +81,51 @@ public class Devoluciones extends javax.swing.JInternalFrame {
         tittle.setText("Devolucion de Vehículo");
         jPanel1.add(tittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, -1));
 
-        typeDay.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        typeDay.setForeground(new java.awt.Color(153, 153, 153));
-        typeDay.setText("209780441");
-        typeDay.setBorder(null);
-        typeDay.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                typeDayActionPerformed(evt);
+        typeID.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        typeID.setForeground(new java.awt.Color(153, 153, 153));
+        typeID.setText("209780441");
+        typeID.setBorder(null);
+        typeID.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeIDMousePressed(evt);
             }
         });
-        jPanel1.add(typeDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 240, -1));
+        typeID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                typeIDActionPerformed(evt);
+            }
+        });
+        jPanel1.add(typeID, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 240, -1));
 
         minPassText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         minPassText.setText("Placa del Vehiculo:");
         jPanel1.add(minPassText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        typeMinPass.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        typeMinPass.setForeground(new java.awt.Color(153, 153, 153));
-        typeMinPass.setText("409425");
-        typeMinPass.setBorder(null);
-        jPanel1.add(typeMinPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 240, -1));
+        typePlaca.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        typePlaca.setForeground(new java.awt.Color(153, 153, 153));
+        typePlaca.setText("409425");
+        typePlaca.setBorder(null);
+        typePlaca.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typePlacaMousePressed(evt);
+            }
+        });
+        jPanel1.add(typePlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 240, -1));
 
         marcaText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         marcaText.setText("Estado del Vehiculo:");
         jPanel1.add(marcaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
-        typeMarca.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        typeMarca.setForeground(new java.awt.Color(153, 153, 153));
-        typeMarca.setText("Rayones en la puerta derecha..");
-        typeMarca.setBorder(null);
-        jPanel1.add(typeMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 240, -1));
+        typeEstado.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        typeEstado.setForeground(new java.awt.Color(153, 153, 153));
+        typeEstado.setText("Rayones en la puerta derecha..");
+        typeEstado.setBorder(null);
+        typeEstado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeEstadoMousePressed(evt);
+            }
+        });
+        jPanel1.add(typeEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 240, -1));
 
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 240, 10));
@@ -121,13 +143,13 @@ public class Devoluciones extends javax.swing.JInternalFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 890, 370));
 
-        attendBtn.setText("Realizar Devolucion");
-        attendBtn.addActionListener(new java.awt.event.ActionListener() {
+        devolverBtn.setText("Realizar Devolucion");
+        devolverBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                attendBtnActionPerformed(evt);
+                devolverBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(attendBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 200, 30));
+        jPanel1.add(devolverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 200, 30));
 
         dayText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         dayText.setText("Cedula de Cliente");
@@ -147,19 +169,73 @@ public class Devoluciones extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void typeDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeDayActionPerformed
+    private void typeIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_typeDayActionPerformed
+    }//GEN-LAST:event_typeIDActionPerformed
 
-    private void attendBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendBtnActionPerformed
+    private void devolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_devolverBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_attendBtnActionPerformed
+    }//GEN-LAST:event_devolverBtnActionPerformed
+
+    private void typeIDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeIDMousePressed
+        // TODO add your handling code here:
+        if (typeID.getText().equals("209780441")) {
+            typeID.setText("");
+            typeID.setForeground(Color.black);
+        }
+
+        if (typePlaca.getText().isEmpty()) {
+            typePlaca.setText("409425");
+            typePlaca.setForeground(Color.gray);
+        }
+
+        if (typeEstado.getText().isEmpty()) {
+            typeEstado.setText("Rayones en la puerta derecha..");
+            typeEstado.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_typeIDMousePressed
+
+    private void typePlacaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typePlacaMousePressed
+        // TODO add your handling code here:
+        if (typeID.getText().isEmpty()) {
+            typeID.setText("209780441");
+            typeID.setForeground(Color.gray);
+        }
+
+        if (typePlaca.getText().equals("409425")) {
+            typePlaca.setText("");
+            typePlaca.setForeground(Color.black);
+        }
+
+        if (typeEstado.getText().isEmpty()) {
+            typeEstado.setText("Rayones en la puerta derecha..");
+            typeEstado.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_typePlacaMousePressed
+
+    private void typeEstadoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeEstadoMousePressed
+        // TODO add your handling code here:
+        if (typeID.getText().isEmpty()) {
+            typeID.setText("209780441");
+            typeID.setForeground(Color.gray);
+        }
+
+        if (typePlaca.getText().isEmpty()) {
+            typePlaca.setText("409425");
+            typePlaca.setForeground(Color.gray);
+        }
+
+        if (typeEstado.getText().equals("Rayones en la puerta derecha..")) {
+            typeEstado.setText("");
+            typeEstado.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_typeEstadoMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea asignarAreaText;
-    private javax.swing.JButton attendBtn;
     private javax.swing.JLabel dayText;
+    private javax.swing.JButton devolverBtn;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
@@ -170,8 +246,8 @@ public class Devoluciones extends javax.swing.JInternalFrame {
     private javax.swing.JLabel marcaText;
     private javax.swing.JLabel minPassText;
     private javax.swing.JLabel tittle;
-    private javax.swing.JTextField typeDay;
-    private javax.swing.JTextField typeMarca;
-    private javax.swing.JTextField typeMinPass;
+    private javax.swing.JTextField typeEstado;
+    private javax.swing.JTextField typeID;
+    private javax.swing.JTextField typePlaca;
     // End of variables declaration//GEN-END:variables
 }

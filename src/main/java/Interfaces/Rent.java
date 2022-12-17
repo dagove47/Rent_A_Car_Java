@@ -16,7 +16,7 @@ public class Rent extends javax.swing.JInternalFrame {
     /**
      * Creates new form Rent
      */
-    ColaSolicitud soli = new ColaSolicitud();
+    static ColaSolicitud soli = new ColaSolicitud();
 
     public Rent() {
         initComponents();

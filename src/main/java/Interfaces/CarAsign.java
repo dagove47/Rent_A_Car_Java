@@ -4,6 +4,10 @@
  */
 package Interfaces;
 
+import Rent_A_Car.*;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author gblan
@@ -13,6 +17,9 @@ public class CarAsign extends javax.swing.JInternalFrame {
     /**
      * Creates new form CarAsign
      */
+    static ListaVehiculo listaVehiculo = new ListaVehiculo();
+    static ColaSolicitud soli = new ColaSolicitud();
+
     public CarAsign() {
         initComponents();
     }
@@ -101,6 +108,11 @@ public class CarAsign extends javax.swing.JInternalFrame {
         typeDay.setForeground(new java.awt.Color(153, 153, 153));
         typeDay.setText("14");
         typeDay.setBorder(null);
+        typeDay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeDayMousePressed(evt);
+            }
+        });
         typeDay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeDayActionPerformed(evt);
@@ -119,12 +131,22 @@ public class CarAsign extends javax.swing.JInternalFrame {
         typeExtras.setForeground(new java.awt.Color(153, 153, 153));
         typeExtras.setText("Camara, asientos de cuero, sensores");
         typeExtras.setBorder(null);
+        typeExtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeExtrasMousePressed(evt);
+            }
+        });
         bg.add(typeExtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 240, -1));
 
         typeMinPass.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         typeMinPass.setForeground(new java.awt.Color(153, 153, 153));
         typeMinPass.setText("5");
         typeMinPass.setBorder(null);
+        typeMinPass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeMinPassMousePressed(evt);
+            }
+        });
         bg.add(typeMinPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 240, -1));
 
         marcaText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
@@ -135,6 +157,11 @@ public class CarAsign extends javax.swing.JInternalFrame {
         typeMarca.setForeground(new java.awt.Color(153, 153, 153));
         typeMarca.setText("Hyundai");
         typeMarca.setBorder(null);
+        typeMarca.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeMarcaMousePressed(evt);
+            }
+        });
         bg.add(typeMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 240, -1));
 
         modelText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
@@ -144,6 +171,11 @@ public class CarAsign extends javax.swing.JInternalFrame {
         typeModel.setForeground(new java.awt.Color(153, 153, 153));
         typeModel.setText("Accent");
         typeModel.setBorder(null);
+        typeModel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeModelMousePressed(evt);
+            }
+        });
         bg.add(typeModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 240, -1));
 
         yearText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
@@ -153,6 +185,11 @@ public class CarAsign extends javax.swing.JInternalFrame {
         typeYear.setForeground(new java.awt.Color(153, 153, 153));
         typeYear.setText("2017");
         typeYear.setBorder(null);
+        typeYear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeYearMousePressed(evt);
+            }
+        });
         bg.add(typeYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 240, -1));
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
@@ -204,6 +241,11 @@ public class CarAsign extends javax.swing.JInternalFrame {
         typeAsignar.setForeground(new java.awt.Color(153, 153, 153));
         typeAsignar.setText("409425");
         typeAsignar.setBorder(null);
+        typeAsignar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeAsignarMousePressed(evt);
+            }
+        });
         typeAsignar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeAsignarActionPerformed(evt);
@@ -258,6 +300,40 @@ public class CarAsign extends javax.swing.JInternalFrame {
 
     private void attendBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendBtnActionPerformed
         // TODO add your handling code here:
+        Solicitud info = null;
+        try {
+             info = soli.obtenerInfo();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "No hay solicitudes en el sistema...");
+        }
+
+        typeDay.setText(String.valueOf(info.getDiasAlquiler()));
+        typeDay.setForeground(Color.black);
+
+        typeMinPass.setText(String.valueOf(info.getMinimoPasajeros()));
+        typeMinPass.setForeground(Color.black);
+
+        typeMarca.setText(info.getMarca());
+        typeMarca.setForeground(Color.black);
+
+        typeModel.setText(info.getModelo());
+        typeModel.setForeground(Color.black);
+
+        typeYear.setText(info.getAnno());
+        typeYear.setForeground(Color.black);
+
+        typeExtras.setText(info.getExtras());
+        typeExtras.setForeground(Color.black);
+
+        soli.atiende();
+
+        try {
+            asignarAreaText.setText(String.valueOf(listaVehiculo));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se han agregado autos al sistema...");
+        }
+
+
     }//GEN-LAST:event_attendBtnActionPerformed
 
     private void typeAsignarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeAsignarActionPerformed
@@ -267,6 +343,286 @@ public class CarAsign extends javax.swing.JInternalFrame {
     private void asignBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_asignBtnActionPerformed
+
+    private void typeDayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeDayMousePressed
+        // TODO add your handling code here:
+        if (typeDay.getText().equals("14")) {
+            typeDay.setText("");
+            typeDay.setForeground(Color.black);
+        }
+
+        if (typeMinPass.getText().isEmpty()) {
+            typeMinPass.setText("5");
+            typeMinPass.setForeground(Color.gray);
+
+        }
+
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2017");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, asientos de cuero, sensores");
+            typeExtras.setForeground(Color.gray);
+        }
+
+        if (typeAsignar.getText().isEmpty()) {
+            typeAsignar.setText("409425");
+            typeAsignar.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_typeDayMousePressed
+
+    private void typeMinPassMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeMinPassMousePressed
+        // TODO add your handling code here:
+        if (typeDay.getText().isEmpty()) {
+            typeDay.setText("14");
+            typeDay.setForeground(Color.gray);
+        }
+
+        if (typeMinPass.getText().equals("5")) {
+            typeMinPass.setText("");
+            typeMinPass.setForeground(Color.black);
+
+        }
+
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2017");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, asientos de cuero, sensores");
+            typeExtras.setForeground(Color.gray);
+        }
+
+        if (typeAsignar.getText().isEmpty()) {
+            typeAsignar.setText("409425");
+            typeAsignar.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_typeMinPassMousePressed
+
+    private void typeMarcaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeMarcaMousePressed
+        // TODO add your handling code here:
+        if (typeDay.getText().isEmpty()) {
+            typeDay.setText("14");
+            typeDay.setForeground(Color.gray);
+        }
+
+        if (typeMinPass.getText().isEmpty()) {
+            typeMinPass.setText("5");
+            typeMinPass.setForeground(Color.gray);
+
+        }
+
+        if (typeMarca.getText().equals("Hyundai")) {
+            typeMarca.setText("");
+            typeMarca.setForeground(Color.black);
+
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2017");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, asientos de cuero, sensores");
+            typeExtras.setForeground(Color.gray);
+        }
+
+        if (typeAsignar.getText().isEmpty()) {
+            typeAsignar.setText("409425");
+            typeAsignar.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_typeMarcaMousePressed
+
+    private void typeModelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeModelMousePressed
+        // TODO add your handling code here:
+        if (typeDay.getText().isEmpty()) {
+            typeDay.setText("14");
+            typeDay.setForeground(Color.gray);
+        }
+
+        if (typeMinPass.getText().isEmpty()) {
+            typeMinPass.setText("5");
+            typeMinPass.setForeground(Color.gray);
+
+        }
+
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+
+        }
+
+        if (typeModel.getText().equals("Accent")) {
+            typeModel.setText("");
+            typeModel.setForeground(Color.black);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2017");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, asientos de cuero, sensores");
+            typeExtras.setForeground(Color.gray);
+        }
+
+        if (typeAsignar.getText().isEmpty()) {
+            typeAsignar.setText("409425");
+            typeAsignar.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_typeModelMousePressed
+
+    private void typeYearMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeYearMousePressed
+        // TODO add your handling code here:
+        if (typeDay.getText().isEmpty()) {
+            typeDay.setText("14");
+            typeDay.setForeground(Color.gray);
+        }
+
+        if (typeMinPass.getText().isEmpty()) {
+            typeMinPass.setText("5");
+            typeMinPass.setForeground(Color.gray);
+
+        }
+
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().equals("2017")) {
+            typeYear.setText("");
+            typeYear.setForeground(Color.black);
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, asientos de cuero, sensores");
+            typeExtras.setForeground(Color.gray);
+        }
+
+        if (typeAsignar.getText().isEmpty()) {
+            typeAsignar.setText("409425");
+            typeAsignar.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_typeYearMousePressed
+
+    private void typeExtrasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeExtrasMousePressed
+        // TODO add your handling code here:
+        if (typeDay.getText().isEmpty()) {
+            typeDay.setText("14");
+            typeDay.setForeground(Color.gray);
+        }
+
+        if (typeMinPass.getText().isEmpty()) {
+            typeMinPass.setText("5");
+            typeMinPass.setForeground(Color.gray);
+
+        }
+
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2017");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeExtras.getText().equals("Camara, asientos de cuero, sensores")) {
+            typeExtras.setText("");
+            typeExtras.setForeground(Color.black);
+        }
+
+        if (typeAsignar.getText().isEmpty()) {
+            typeAsignar.setText("409425");
+            typeAsignar.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_typeExtrasMousePressed
+
+    private void typeAsignarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeAsignarMousePressed
+        // TODO add your handling code here:
+        if (typeDay.getText().isEmpty()) {
+            typeDay.setText("14");
+            typeDay.setForeground(Color.gray);
+        }
+
+        if (typeMinPass.getText().isEmpty()) {
+            typeMinPass.setText("5");
+            typeMinPass.setForeground(Color.gray);
+
+        }
+
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2017");
+            typeYear.setForeground(Color.gray);
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, asientos de cuero, sensores");
+            typeExtras.setForeground(Color.gray);
+        }
+
+        if (typeAsignar.getText().equals("409425")) {
+            typeAsignar.setText("");
+            typeAsignar.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_typeAsignarMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

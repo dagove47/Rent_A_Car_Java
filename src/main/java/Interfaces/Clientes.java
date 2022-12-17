@@ -21,7 +21,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         initComponents();
     }
 
-    ListaCliente listaCliente = new ListaCliente();
+    static ListaCliente listaCliente = new ListaCliente();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -290,14 +290,14 @@ public class Clientes extends javax.swing.JInternalFrame {
         typeName.setText("Ingrese el nombre completo del cliente");
         typeName.setForeground(Color.gray);
 
-        typeBirth.setText("Ingrese el ID card del cliente");
+        typeId.setText("Ingrese el ID card del cliente");
+        typeId.setForeground(Color.gray);
+
+        typeBirth.setText("Ingrese la fecha de nacimiento");
         typeBirth.setForeground(Color.gray);
 
-        typeEmail.setText("Ingrese la fecha de nacimiento");
+        typeEmail.setText("example@gmail.com");
         typeEmail.setForeground(Color.gray);
-
-        typeId.setText("example@gmail.com");
-        typeId.setForeground(Color.gray);
 
         textClients.setText(String.valueOf(listaCliente));
     }//GEN-LAST:event_addBtnActionPerformed
