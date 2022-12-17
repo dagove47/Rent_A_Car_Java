@@ -29,11 +29,30 @@ public class ColaSolicitud {
     
     
     public void encola(Solicitud solicitud){
+//        String cat = listaCliente.buscarCategoria(solicitud.getCedula());
         NodoS newNodo=new NodoS(solicitud);
         if(frente == null){
             frente = newNodo;
             ultimo = newNodo;
-        } else{
+        } else if(newNodo.getDato().getCatCliente().equals("ZAFIRO")){
+            newNodo.setNodoAnterior(frente);
+            frente = newNodo;
+        } else if(newNodo.getDato().getCatCliente().equals("ORO") || newNodo.getDato().getCatCliente().equals("PLATA")){
+            NodoS aux = frente;
+            while(aux != null){
+                if(aux.getNodoAnterior() == null){
+                   ultimo.setNodoAnterior(newNodo);
+                   ultimo=newNodo; 
+                }
+                if((aux.getNodoAnterior().getDato().getCatCliente().equals(newNodo.getDato().getCatCliente()))
+                        || ((aux.getNodoAnterior().getDato().getCatCliente().equals("BRONZE")))){
+                    NodoS temp = aux;
+                    newNodo.setNodoAnterior(temp.getNodoAnterior());
+                    aux.setNodoAnterior(newNodo);
+                }
+                aux=aux.getNodoAnterior();
+            }
+        } else {
             ultimo.setNodoAnterior(newNodo);
             ultimo=newNodo;
         }

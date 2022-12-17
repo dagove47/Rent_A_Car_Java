@@ -193,6 +193,20 @@ public class ListaCliente {
             }
         }
     }
+    
+    public String buscarCategoria(int  id) {
+        String cat = "";
+        if (cabeza != null) {
+            NodoC aux = cabeza;
+            while (aux != null && aux.getDato().getCedula() != id) {
+                aux = aux.getNext();
+            }
+            if (aux != null && aux.getDato().getCedula() == id ) {
+                cat = aux.getDato().getCategoria();
+            }
+        }
+        return cat;
+    }
 
     public Cliente buscar(int id) {
         if (cabeza != null) {
