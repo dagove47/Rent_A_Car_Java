@@ -173,6 +173,7 @@ public class CarAsign extends javax.swing.JInternalFrame {
         jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 240, 10));
 
+        asignarAreaText.setEditable(false);
         asignarAreaText.setColumns(20);
         asignarAreaText.setRows(5);
         jScrollPane1.setViewportView(asignarAreaText);

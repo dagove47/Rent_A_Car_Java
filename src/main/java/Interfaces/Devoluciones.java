@@ -114,6 +114,7 @@ public class Devoluciones extends javax.swing.JInternalFrame {
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 240, 10));
 
+        asignarAreaText.setEditable(false);
         asignarAreaText.setColumns(20);
         asignarAreaText.setRows(5);
         jScrollPane1.setViewportView(asignarAreaText);

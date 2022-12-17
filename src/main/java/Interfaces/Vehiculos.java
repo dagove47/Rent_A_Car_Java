@@ -391,6 +391,7 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         });
         bg.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, 80, 40));
 
+        carArea.setEditable(false);
         carArea.setColumns(20);
         carArea.setRows(5);
         jScrollPane1.setViewportView(carArea);
