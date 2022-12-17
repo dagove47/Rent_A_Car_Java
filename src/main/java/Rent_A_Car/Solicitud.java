@@ -17,13 +17,14 @@ public class Solicitud {
     */    
     //</editor-fold>
     
+    private int cedula;
     private int diasAlquiler;
     private int minimoPasajeros;
     private String marca;
     private String modelo;
     private String anno;
     private String extras;
-    public String estado; 
+    public String estado = "REGISTRADO"; 
     
     public Solicitud(){}
     
@@ -35,7 +36,8 @@ public class Solicitud {
     */    
     //</editor-fold>
 
-    public Solicitud(int diasAlquiler, int minimoPasajeros, String marca, String modelo, String anno, String extras, String estado) {
+    public Solicitud(int cedula, int diasAlquiler, int minimoPasajeros, String marca, String modelo, String anno, String extras, String estado) {
+        this.cedula = cedula;
         this.diasAlquiler = diasAlquiler;
         this.minimoPasajeros = minimoPasajeros;
         this.marca = marca;
@@ -45,6 +47,14 @@ public class Solicitud {
         this.estado = estado;
     }
 
+    public int getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
+    
     public int getDiasAlquiler() {
         return diasAlquiler;
     }
@@ -114,7 +124,7 @@ public class Solicitud {
 
     @Override
     public String toString() {
-        return "Solicitud{" + "diasAlquiler=" + diasAlquiler + ", minimoPasajeros=" + minimoPasajeros 
+        return "Solicitud{" + "cedula=" + cedula + "diasAlquiler=" + diasAlquiler + ", minimoPasajeros=" + minimoPasajeros 
                 + ", marca=" + marca + ", modelo=" + modelo + ", anno=" + anno + ", extras=" + extras + ", estado=" + estado + '}';
     }
 }

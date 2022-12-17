@@ -43,8 +43,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         exitBtn = new javax.swing.JPanel();
         exitText = new javax.swing.JLabel();
         menuBg = new javax.swing.JPanel();
-        proflieBg = new javax.swing.JPanel();
-        proflieIcon = new javax.swing.JLabel();
         clientBtn = new javax.swing.JPanel();
         clientText = new javax.swing.JLabel();
         carBtn = new javax.swing.JPanel();
@@ -140,28 +138,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         bg.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         menuBg.setBackground(new java.awt.Color(0, 39, 54));
-
-        proflieBg.setBackground(new java.awt.Color(0, 34, 47));
-
-        proflieIcon.setFont(new java.awt.Font("Roboto Light", 1, 24)); // NOI18N
-        proflieIcon.setForeground(new java.awt.Color(255, 255, 255));
-        proflieIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Logo.jpeg"))); // NOI18N
-
-        javax.swing.GroupLayout proflieBgLayout = new javax.swing.GroupLayout(proflieBg);
-        proflieBg.setLayout(proflieBgLayout);
-        proflieBgLayout.setHorizontalGroup(
-            proflieBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, proflieBgLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(proflieIcon)
-                .addGap(114, 114, 114))
-        );
-        proflieBgLayout.setVerticalGroup(
-            proflieBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(proflieBgLayout.createSequentialGroup()
-                .addComponent(proflieIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                .addContainerGap())
-        );
 
         clientBtn.setBackground(new java.awt.Color(0, 39, 54));
 
@@ -352,7 +328,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuBg.setLayout(menuBgLayout);
         menuBgLayout.setHorizontalGroup(
             menuBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(proflieBg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(clientBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(carBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(rentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -363,9 +338,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuBgLayout.setVerticalGroup(
             menuBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuBgLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(proflieBg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(190, 190, 190)
                 .addComponent(clientBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(carBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -657,8 +630,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel menuBg;
-    private javax.swing.JPanel proflieBg;
-    private javax.swing.JLabel proflieIcon;
     private javax.swing.JPanel rentBtn;
     private javax.swing.JLabel rentText;
     private javax.swing.JDesktopPane subMenu;

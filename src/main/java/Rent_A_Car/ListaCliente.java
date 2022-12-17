@@ -167,6 +167,30 @@ public class ListaCliente {
         }
         return p;
     }
+    
+    public void categoria(int  id) {
+        if (cabeza != null) {
+            NodoC aux = cabeza;
+            while (aux != null && aux.getDato().getCedula() != id) {
+                aux = aux.getNext();
+            }
+            if (aux != null && aux.getDato().getCedula() == id ) {
+                switch (aux.getDato().getCategoria()) {
+                    case "BRONCE":
+                        aux.getDato().setCategoria("PLATA");
+                        break;
+                    case "PLATA":
+                        aux.getDato().setCategoria("ORO");
+                        break;
+                    case "ORO":
+                        aux.getDato().setCategoria("ZAFIRO");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
 
     public Cliente buscar(int  id) {
         if (cabeza != null) {

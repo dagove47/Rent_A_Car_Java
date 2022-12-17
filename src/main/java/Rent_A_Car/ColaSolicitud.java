@@ -10,6 +10,7 @@ public class ColaSolicitud {
     * clase.
     */
     
+    ListaCliente listaCliente = new ListaCliente();
     private NodoS frente;
     private NodoS ultimo;
 
@@ -56,6 +57,10 @@ public class ColaSolicitud {
             newNodo.setNodoAnterior(frente);
             frente = newNodo;
         }
+    }
+
+    public void categoria(int num) {
+        listaCliente.categoria(num);
     }
     
 //    public boolean buscar(int num) {
