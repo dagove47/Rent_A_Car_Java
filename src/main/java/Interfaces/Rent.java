@@ -16,8 +16,16 @@ public class Rent extends javax.swing.JInternalFrame {
     /**
      * Creates new form Rent
      */
-    static ColaSolicitud soli = new ColaSolicitud();
-    static ListaCliente listaCliente = new  ListaCliente();
+    Clientes cl = new Clientes();
+    private static ColaSolicitud soli = new ColaSolicitud();
+
+    public ColaSolicitud getSoli() {
+        return this.soli;
+    }
+
+    public void setSoli(ColaSolicitud soli) {
+        this.soli = soli;
+    }
 
     public Rent() {
         initComponents();
@@ -60,8 +68,6 @@ public class Rent extends javax.swing.JInternalFrame {
         dayText1 = new javax.swing.JLabel();
         typeID = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
-        catText = new javax.swing.JLabel();
-        lvOptions = new javax.swing.JComboBox<>();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -270,13 +276,6 @@ public class Rent extends javax.swing.JInternalFrame {
         jSeparator10.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 240, 10));
 
-        catText.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        catText.setText("Categoría:");
-        bg.add(catText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
-
-        lvOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BRONZE", "PLATA", "ORO", "ZAFIRO" }));
-        bg.add(lvOptions, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, 240, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -311,11 +310,9 @@ public class Rent extends javax.swing.JInternalFrame {
         String modelo = typeModel.getText();
         String year = typeYear.getText();
         String extras = typeExtras.getText();
-        String cat = String.valueOf(lvOptions.getSelectedItem());
-
-        soli.encola(new Solicitud(id, dias, 
-                pass,marca, modelo, year, extras,
-                "Registrada", cat));
+        soli.encola(new Solicitud(id, dias,
+                pass, marca, modelo, year, extras,
+                "Registrada", cl.getListaCliente().buscarCategoria(id)));
 
         soliAreaText.setText(String.valueOf(soli));
 
@@ -339,6 +336,10 @@ public class Rent extends javax.swing.JInternalFrame {
 
         typeExtras.setText("Camara, asientos de cuero, sensores");
         typeExtras.setForeground(Color.gray);
+
+        if (dias > 30) {
+            cl.getListaCliente().categoria(id);
+        }
 
 
     }//GEN-LAST:event_addBtnActionPerformed
@@ -668,7 +669,6 @@ public class Rent extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
     private javax.swing.JPanel bg;
-    private javax.swing.JLabel catText;
     private javax.swing.JLabel dayText;
     private javax.swing.JLabel dayText1;
     private javax.swing.JLabel extrasText;
@@ -682,7 +682,6 @@ public class Rent extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JComboBox<String> lvOptions;
     private javax.swing.JLabel marcaText;
     private javax.swing.JLabel minPassText;
     private javax.swing.JLabel modelText;

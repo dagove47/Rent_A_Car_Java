@@ -16,10 +16,18 @@ public class Devoluciones extends javax.swing.JInternalFrame {
     /**
      * Creates new form Devoluciones
      */
-    static ListaVehiculo listaVehiculo = new ListaVehiculo();
-    static PilaAsignar asignados = new PilaAsignar();
-    ListaDevolucion listaD = new ListaDevolucion();
-    
+    Vehiculos v = new Vehiculos();
+    CarAsign c = new CarAsign();
+    private static ListaDevolucion listaD = new ListaDevolucion();
+
+    public ListaDevolucion getListaD() {
+        return this.listaD;
+    }
+
+    public void setListaD(ListaDevolucion listaD) {
+        this.listaD = listaD;
+    }
+
     public Devoluciones() {
         initComponents();
     }
@@ -176,9 +184,11 @@ public class Devoluciones extends javax.swing.JInternalFrame {
     private void devolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_devolverBtnActionPerformed
         // TODO add your handling code here:
         String placa = typePlaca.getText();
-        String estado = typeEstado.getText();
+        Vehiculo info = v.getListaVehiculo().buscar(placa);
+        info.setEstado("Disponible");
         int id = Integer.parseInt(typeID.getText());
-        listaD.add(new Devolucion (placa,estado,id));
+        String estado = typeEstado.getText();
+        listaD.add(new Devolucion(placa, estado, id));
         devolArea.setText(String.valueOf(listaD));
     }//GEN-LAST:event_devolverBtnActionPerformed
 

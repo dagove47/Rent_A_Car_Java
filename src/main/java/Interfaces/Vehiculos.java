@@ -20,11 +20,17 @@ public class Vehiculos extends javax.swing.JInternalFrame {
      * Creates new form Vehiculos
      */
     DefaultTableModel modelo;
-    ListaVehiculo listaVehiculo = new ListaVehiculo();
+    private static ListaVehiculo listaVehiculo = new ListaVehiculo();
 
-    public String listaMiedo(){
-        return String.valueOf(listaVehiculo); 
+    public  ListaVehiculo getListaVehiculo() {
+        return this.listaVehiculo;
     }
+
+    public void setListaVehiculo(ListaVehiculo listaVehiculo) {
+        this.listaVehiculo = listaVehiculo;
+    }
+
+    
     
     public Vehiculos() {
         initComponents();

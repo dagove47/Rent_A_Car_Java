@@ -44,6 +44,7 @@ public class PilaAsignar {
         }
         this.largo++;
     }
+   
 
     //<editor-fold defaultstate="collapsed" desc="listarPila">
     /*
