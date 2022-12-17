@@ -24,7 +24,7 @@ public class Solicitud {
     private String modelo;
     private String anno;
     private String extras;
-    public String estado = "REGISTRADO"; 
+    public String estado; 
     
     public Solicitud(){}
     

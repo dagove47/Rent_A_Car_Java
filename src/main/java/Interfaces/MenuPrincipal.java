@@ -43,6 +43,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         exitBtn = new javax.swing.JPanel();
         exitText = new javax.swing.JLabel();
         menuBg = new javax.swing.JPanel();
+        proflieBg = new javax.swing.JPanel();
+        proflieIcon = new javax.swing.JLabel();
         clientBtn = new javax.swing.JPanel();
         clientText = new javax.swing.JLabel();
         carBtn = new javax.swing.JPanel();
@@ -139,8 +141,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         menuBg.setBackground(new java.awt.Color(0, 39, 54));
 
-<<<<<<< Updated upstream
-=======
         proflieBg.setBackground(new java.awt.Color(0, 34, 47));
 
         proflieIcon.setFont(new java.awt.Font("Roboto Light", 1, 24)); // NOI18N
@@ -161,7 +161,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
->>>>>>> Stashed changes
         clientBtn.setBackground(new java.awt.Color(0, 39, 54));
 
         clientText.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -351,6 +350,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuBg.setLayout(menuBgLayout);
         menuBgLayout.setHorizontalGroup(
             menuBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(proflieBg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(clientBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(carBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(rentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -361,7 +361,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuBgLayout.setVerticalGroup(
             menuBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuBgLayout.createSequentialGroup()
-                .addGap(190, 190, 190)
+                .addGap(30, 30, 30)
+                .addComponent(proflieBg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(clientBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(carBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -653,6 +655,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel menuBg;
+    private javax.swing.JPanel proflieBg;
+    private javax.swing.JLabel proflieIcon;
     private javax.swing.JPanel rentBtn;
     private javax.swing.JLabel rentText;
     private javax.swing.JDesktopPane subMenu;

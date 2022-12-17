@@ -19,7 +19,7 @@ public class Rent extends javax.swing.JInternalFrame {
     public Rent() {
         initComponents();
     }
-    
+
     ColaSolicitud soli = new ColaSolicitud();
 
     /**
@@ -56,6 +56,9 @@ public class Rent extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         soliAreaText = new javax.swing.JTextArea();
         addBtn = new javax.swing.JButton();
+        dayText1 = new javax.swing.JLabel();
+        typeID = new javax.swing.JTextField();
+        jSeparator10 = new javax.swing.JSeparator();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -90,7 +93,7 @@ public class Rent extends javax.swing.JInternalFrame {
 
         extrasText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         extrasText.setText("Extras:");
-        bg.add(extrasText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+        bg.add(extrasText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
 
         typeDay.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         typeDay.setForeground(new java.awt.Color(153, 153, 153));
@@ -111,15 +114,15 @@ public class Rent extends javax.swing.JInternalFrame {
                 typeDayKeyPressed(evt);
             }
         });
-        bg.add(typeDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 240, -1));
+        bg.add(typeDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 240, -1));
 
         minPassText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         minPassText.setText("Minimo de Pasajeros: ");
-        bg.add(minPassText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        bg.add(minPassText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
         dayText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        dayText.setText("Cantidad de días: ");
-        bg.add(dayText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        dayText.setText("Cedula:");
+        bg.add(dayText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         typeExtras.setForeground(new java.awt.Color(153, 153, 153));
         typeExtras.setText("Camara, asientos de cuero, sensores");
@@ -134,7 +137,7 @@ public class Rent extends javax.swing.JInternalFrame {
                 typeExtrasKeyPressed(evt);
             }
         });
-        bg.add(typeExtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 240, -1));
+        bg.add(typeExtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 240, -1));
 
         typeMinPass.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         typeMinPass.setForeground(new java.awt.Color(153, 153, 153));
@@ -153,11 +156,11 @@ public class Rent extends javax.swing.JInternalFrame {
                 typeMinPassKeyReleased(evt);
             }
         });
-        bg.add(typeMinPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 240, -1));
+        bg.add(typeMinPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 240, -1));
 
         marcaText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         marcaText.setText("Marca: ");
-        bg.add(marcaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        bg.add(marcaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
 
         typeMarca.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         typeMarca.setForeground(new java.awt.Color(153, 153, 153));
@@ -168,11 +171,11 @@ public class Rent extends javax.swing.JInternalFrame {
                 typeMarcaMousePressed(evt);
             }
         });
-        bg.add(typeMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 240, -1));
+        bg.add(typeMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 240, -1));
 
         modelText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         modelText.setText("Modelo:");
-        bg.add(modelText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        bg.add(modelText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
         typeModel.setForeground(new java.awt.Color(153, 153, 153));
         typeModel.setText("Accent");
@@ -187,11 +190,11 @@ public class Rent extends javax.swing.JInternalFrame {
                 typeModelKeyPressed(evt);
             }
         });
-        bg.add(typeModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 240, -1));
+        bg.add(typeModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 240, -1));
 
         yearText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         yearText.setText("Año:");
-        bg.add(yearText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+        bg.add(yearText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
         typeYear.setForeground(new java.awt.Color(153, 153, 153));
         typeYear.setText("2023");
@@ -201,31 +204,31 @@ public class Rent extends javax.swing.JInternalFrame {
                 typeYearMousePressed(evt);
             }
         });
-        bg.add(typeYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 240, -1));
+        bg.add(typeYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 240, -1));
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 240, 10));
+        bg.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 240, 10));
 
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 240, 10));
+        bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 240, 10));
 
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 240, 10));
+        bg.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 240, 10));
 
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 240, 10));
+        bg.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 240, 10));
 
         jSeparator8.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 240, 10));
+        bg.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 240, 10));
 
         jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 240, 10));
+        bg.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 240, 10));
 
         soliAreaText.setColumns(20);
         soliAreaText.setRows(5);
         jScrollPane1.setViewportView(soliAreaText);
 
-        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 860, 290));
+        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 860, 280));
 
         addBtn.setText("Agregar");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -233,21 +236,51 @@ public class Rent extends javax.swing.JInternalFrame {
                 addBtnActionPerformed(evt);
             }
         });
-        bg.add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 320, 140, 30));
+        bg.add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, 140, 30));
+
+        dayText1.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        dayText1.setText("Cantidad de días: ");
+        bg.add(dayText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+
+        typeID.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        typeID.setForeground(new java.awt.Color(153, 153, 153));
+        typeID.setText("108950700");
+        typeID.setBorder(null);
+        typeID.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                typeIDMousePressed(evt);
+            }
+        });
+        typeID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                typeIDActionPerformed(evt);
+            }
+        });
+        typeID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                typeIDKeyPressed(evt);
+            }
+        });
+        bg.add(typeID, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 240, -1));
+
+        jSeparator10.setForeground(new java.awt.Color(0, 0, 0));
+        bg.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 240, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -260,18 +293,22 @@ public class Rent extends javax.swing.JInternalFrame {
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
+        int id = Integer.parseInt(typeID.getText());
         int dias = Integer.parseInt(typeDay.getText());
         int pass = Integer.parseInt(typeMinPass.getText());
         String marca = typeMarca.getText();
         String modelo = typeModel.getText();
         String year = typeYear.getText();
         String extras = typeExtras.getText();
-        
-        soli.encola(new Solicitud(dias,pass,marca,modelo,year,extras,"Registrada"));
-        
+
+        soli.encola(new Solicitud(id,dias, pass, 
+                marca, modelo, year, extras, "Registrada"));
+
         soliAreaText.setText(String.valueOf(soli));
         
         
+
+
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void typeDayKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_typeDayKeyPressed
@@ -284,6 +321,10 @@ public class Rent extends javax.swing.JInternalFrame {
 
     private void typeMarcaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeMarcaMousePressed
         // TODO add your handling code here:
+        if (typeID.getText().isEmpty()) {
+            typeID.setText("108950700");
+            typeID.setForeground(Color.black);
+        }
         if (typeDay.getText().isEmpty()) {
             typeDay.setText("14");
             typeDay.setForeground(Color.gray);
@@ -325,6 +366,10 @@ public class Rent extends javax.swing.JInternalFrame {
 
     private void typeYearMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeYearMousePressed
         // TODO add your handling code here:
+        if (typeID.getText().isEmpty()) {
+            typeID.setText("108950700");
+            typeID.setForeground(Color.black);
+        }
         if (typeDay.getText().isEmpty()) {
             typeDay.setText("14");
             typeDay.setForeground(Color.gray);
@@ -371,6 +416,11 @@ public class Rent extends javax.swing.JInternalFrame {
 
     private void typeMinPassMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeMinPassMousePressed
         // TODO add your handling code here:
+        if (typeID.getText().isEmpty()) {
+            typeID.setText("108950700");
+            typeID.setForeground(Color.black);
+        }
+
         if (typeDay.getText().isEmpty()) {
             typeDay.setText("14");
             typeDay.setForeground(Color.gray);
@@ -408,6 +458,11 @@ public class Rent extends javax.swing.JInternalFrame {
 
     private void typeModelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeModelMousePressed
         // TODO add your handling code here:
+        if (typeID.getText().isEmpty()) {
+            typeID.setText("108950700");
+            typeID.setForeground(Color.black);
+        }
+
         if (typeDay.getText().isEmpty()) {
             typeDay.setText("14");
             typeDay.setForeground(Color.gray);
@@ -445,6 +500,11 @@ public class Rent extends javax.swing.JInternalFrame {
 
     private void typeExtrasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeExtrasMousePressed
         // TODO add your handling code here:
+        if (typeID.getText().isEmpty()) {
+            typeID.setText("108950700");
+            typeID.setForeground(Color.black);
+        }
+
         if (typeDay.getText().isEmpty()) {
             typeDay.setText("14");
             typeDay.setForeground(Color.gray);
@@ -482,6 +542,11 @@ public class Rent extends javax.swing.JInternalFrame {
 
     private void typeDayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeDayMousePressed
         // TODO add your handling code here:
+        if (typeID.getText().isEmpty()) {
+            typeID.setText("108950700");
+            typeID.setForeground(Color.black);
+        }
+
         if (typeDay.getText().equals("14")) {
             typeDay.setText("");
             typeDay.setForeground(Color.black);
@@ -517,15 +582,67 @@ public class Rent extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_typeDayMousePressed
 
+    private void typeIDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeIDMousePressed
+        // TODO add your handling code here:
+        if (typeID.getText().equals("108950700")) {
+            typeID.setText("");
+            typeID.setForeground(Color.black);
+        }
+
+        if (typeDay.getText().isEmpty()) {
+            typeDay.setText("14");
+            typeDay.setForeground(Color.gray);
+
+        }
+
+        if (typeMinPass.getText().isEmpty()) {
+            typeMinPass.setText("5");
+            typeMinPass.setForeground(Color.gray);
+
+        }
+
+        if (typeMarca.getText().isEmpty()) {
+            typeMarca.setText("Hyundai");
+            typeMarca.setForeground(Color.gray);
+        }
+
+        if (typeModel.getText().isEmpty()) {
+            typeModel.setText("Accent");
+            typeModel.setForeground(Color.gray);
+        }
+
+        if (typeYear.getText().isEmpty()) {
+            typeYear.setText("2023");
+            typeYear.setForeground(Color.gray);
+
+        }
+
+        if (typeExtras.getText().isEmpty()) {
+            typeExtras.setText("Camara, asientos de cuero, sensores");
+            typeExtras.setForeground(Color.gray);
+
+        }
+    }//GEN-LAST:event_typeIDMousePressed
+
+    private void typeIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_typeIDActionPerformed
+
+    private void typeIDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_typeIDKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_typeIDKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
     private javax.swing.JPanel bg;
     private javax.swing.JLabel dayText;
+    private javax.swing.JLabel dayText1;
     private javax.swing.JLabel extrasText;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
@@ -539,6 +656,7 @@ public class Rent extends javax.swing.JInternalFrame {
     private javax.swing.JLabel tittle;
     private javax.swing.JTextField typeDay;
     private javax.swing.JTextField typeExtras;
+    private javax.swing.JTextField typeID;
     private javax.swing.JTextField typeMarca;
     private javax.swing.JTextField typeMinPass;
     private javax.swing.JTextField typeModel;
