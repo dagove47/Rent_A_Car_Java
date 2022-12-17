@@ -139,6 +139,29 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         menuBg.setBackground(new java.awt.Color(0, 39, 54));
 
+<<<<<<< Updated upstream
+=======
+        proflieBg.setBackground(new java.awt.Color(0, 34, 47));
+
+        proflieIcon.setFont(new java.awt.Font("Roboto Light", 1, 24)); // NOI18N
+        proflieIcon.setForeground(new java.awt.Color(255, 255, 255));
+        proflieIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\gblan\\OneDrive - Universidad Fidélitas\\Ufidélitas\\3 Cuatrimestre\\Estructura de Datos\\Proyecto\\Iconos\\Proflie_Icon2__1_-removebg-preview.png")); // NOI18N
+        proflieIcon.setText("Administrador");
+
+        javax.swing.GroupLayout proflieBgLayout = new javax.swing.GroupLayout(proflieBg);
+        proflieBg.setLayout(proflieBgLayout);
+        proflieBgLayout.setHorizontalGroup(
+            proflieBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(proflieIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        proflieBgLayout.setVerticalGroup(
+            proflieBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(proflieBgLayout.createSequentialGroup()
+                .addComponent(proflieIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+>>>>>>> Stashed changes
         clientBtn.setBackground(new java.awt.Color(0, 39, 54));
 
         clientText.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
