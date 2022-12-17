@@ -216,6 +216,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         });
         bg.add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 270, 50));
 
+        textClients.setEditable(false);
         textClients.setColumns(20);
         textClients.setRows(5);
         textPanel.setViewportView(textClients);
