@@ -4,8 +4,7 @@
  */
 package Interfaces;
 
-import Rent_A_Car.ListaVehiculo;
-import Rent_A_Car.PilaAsignar;
+import Rent_A_Car.*;
 import java.awt.Color;
 
 /**
@@ -19,6 +18,7 @@ public class Devoluciones extends javax.swing.JInternalFrame {
      */
     static ListaVehiculo listaVehiculo = new ListaVehiculo();
     static PilaAsignar asignados = new PilaAsignar();
+    ListaDevolucion listaD = new ListaDevolucion();
     
     public Devoluciones() {
         initComponents();
@@ -46,7 +46,7 @@ public class Devoluciones extends javax.swing.JInternalFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        asignarAreaText = new javax.swing.JTextArea();
+        devolArea = new javax.swing.JTextArea();
         devolverBtn = new javax.swing.JButton();
         dayText = new javax.swing.JLabel();
 
@@ -136,10 +136,10 @@ public class Devoluciones extends javax.swing.JInternalFrame {
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 240, 10));
 
-        asignarAreaText.setEditable(false);
-        asignarAreaText.setColumns(20);
-        asignarAreaText.setRows(5);
-        jScrollPane1.setViewportView(asignarAreaText);
+        devolArea.setEditable(false);
+        devolArea.setColumns(20);
+        devolArea.setRows(5);
+        jScrollPane1.setViewportView(devolArea);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 890, 370));
 
@@ -175,6 +175,11 @@ public class Devoluciones extends javax.swing.JInternalFrame {
 
     private void devolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_devolverBtnActionPerformed
         // TODO add your handling code here:
+        String placa = typePlaca.getText();
+        String estado = typeEstado.getText();
+        int id = Integer.parseInt(typeID.getText());
+        listaD.add(new Devolucion (placa,estado,id));
+        devolArea.setText(String.valueOf(listaD));
     }//GEN-LAST:event_devolverBtnActionPerformed
 
     private void typeIDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeIDMousePressed
@@ -233,8 +238,8 @@ public class Devoluciones extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea asignarAreaText;
     private javax.swing.JLabel dayText;
+    private javax.swing.JTextArea devolArea;
     private javax.swing.JButton devolverBtn;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;

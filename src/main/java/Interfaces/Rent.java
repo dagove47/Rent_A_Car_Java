@@ -60,6 +60,8 @@ public class Rent extends javax.swing.JInternalFrame {
         dayText1 = new javax.swing.JLabel();
         typeID = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
+        catText = new javax.swing.JLabel();
+        lvOptions = new javax.swing.JComboBox<>();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -230,7 +232,7 @@ public class Rent extends javax.swing.JInternalFrame {
         soliAreaText.setRows(5);
         jScrollPane1.setViewportView(soliAreaText);
 
-        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 860, 280));
+        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 890, 250));
 
         addBtn.setText("Agregar");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -238,7 +240,7 @@ public class Rent extends javax.swing.JInternalFrame {
                 addBtnActionPerformed(evt);
             }
         });
-        bg.add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, 140, 30));
+        bg.add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 380, 140, 30));
 
         dayText1.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         dayText1.setText("Cantidad de días: ");
@@ -267,6 +269,13 @@ public class Rent extends javax.swing.JInternalFrame {
 
         jSeparator10.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 240, 10));
+
+        catText.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        catText.setText("Categoría:");
+        bg.add(catText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
+
+        lvOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BRONZE", "PLATA", "ORO", "ZAFIRO" }));
+        bg.add(lvOptions, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, 240, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -302,10 +311,11 @@ public class Rent extends javax.swing.JInternalFrame {
         String modelo = typeModel.getText();
         String year = typeYear.getText();
         String extras = typeExtras.getText();
+        String cat = String.valueOf(lvOptions.getSelectedItem());
 
         soli.encola(new Solicitud(id, dias, 
                 pass,marca, modelo, year, extras,
-                "Registrada", listaCliente.buscarCategoria(id)));
+                "Registrada", cat));
 
         soliAreaText.setText(String.valueOf(soli));
 
@@ -658,6 +668,7 @@ public class Rent extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
     private javax.swing.JPanel bg;
+    private javax.swing.JLabel catText;
     private javax.swing.JLabel dayText;
     private javax.swing.JLabel dayText1;
     private javax.swing.JLabel extrasText;
@@ -671,6 +682,7 @@ public class Rent extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JComboBox<String> lvOptions;
     private javax.swing.JLabel marcaText;
     private javax.swing.JLabel minPassText;
     private javax.swing.JLabel modelText;

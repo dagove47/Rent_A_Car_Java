@@ -17,8 +17,15 @@ public class CarAsign extends javax.swing.JInternalFrame {
     /**
      * Creates new form CarAsign
      */
-    static ListaVehiculo listaVehiculo = new ListaVehiculo();
-    static ColaSolicitud soli = new ColaSolicitud();
+    ListaVehiculo listaVehiculo = new ListaVehiculo();
+    ColaSolicitud soli = new ColaSolicitud();
+    PilaAsignar asignar = new PilaAsignar();
+
+    Vehiculos v = new Vehiculos();
+
+    public String imprimeVehiculos(String x) {
+        return x;
+    }
 
     public CarAsign() {
         initComponents();
@@ -68,6 +75,13 @@ public class CarAsign extends javax.swing.JInternalFrame {
         totalText = new javax.swing.JLabel();
         subtotalAmount = new javax.swing.JLabel();
         impuestosAmount = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        typeID = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        typePrecio = new javax.swing.JTextField();
+        calcBtn = new javax.swing.JButton();
+        jSeparator11 = new javax.swing.JSeparator();
+        jSeparator12 = new javax.swing.JSeparator();
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,7 +116,7 @@ public class CarAsign extends javax.swing.JInternalFrame {
 
         extrasText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         extrasText.setText("Extras:");
-        bg.add(extrasText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+        bg.add(extrasText, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, -1, -1));
 
         typeDay.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         typeDay.setForeground(new java.awt.Color(153, 153, 153));
@@ -126,7 +140,7 @@ public class CarAsign extends javax.swing.JInternalFrame {
 
         asignarText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         asignarText.setText("Vehiculo a Asignar:");
-        bg.add(asignarText, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, -1, -1));
+        bg.add(asignarText, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, -1, -1));
 
         typeExtras.setForeground(new java.awt.Color(153, 153, 153));
         typeExtras.setText("Camara, asientos de cuero, sensores");
@@ -136,7 +150,7 @@ public class CarAsign extends javax.swing.JInternalFrame {
                 typeExtrasMousePressed(evt);
             }
         });
-        bg.add(typeExtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 240, -1));
+        bg.add(typeExtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, 240, -1));
 
         typeMinPass.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         typeMinPass.setForeground(new java.awt.Color(153, 153, 153));
@@ -193,7 +207,7 @@ public class CarAsign extends javax.swing.JInternalFrame {
         bg.add(typeYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 240, -1));
 
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 240, 10));
+        bg.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 140, 240, 10));
 
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
         bg.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 240, 10));
@@ -215,7 +229,7 @@ public class CarAsign extends javax.swing.JInternalFrame {
         asignarAreaText.setRows(5);
         jScrollPane1.setViewportView(asignarAreaText);
 
-        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 890, 220));
+        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 890, 220));
 
         attendBtn.setText("Atender");
         attendBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -231,11 +245,11 @@ public class CarAsign extends javax.swing.JInternalFrame {
                 asignBtnActionPerformed(evt);
             }
         });
-        bg.add(asignBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 140, 30));
+        bg.add(asignBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 140, 30));
 
         totalAmount.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         totalAmount.setText("0.00");
-        bg.add(totalAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 260, -1, -1));
+        bg.add(totalAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 360, -1, -1));
 
         typeAsignar.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         typeAsignar.setForeground(new java.awt.Color(153, 153, 153));
@@ -251,10 +265,10 @@ public class CarAsign extends javax.swing.JInternalFrame {
                 typeAsignarActionPerformed(evt);
             }
         });
-        bg.add(typeAsignar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 120, 240, -1));
+        bg.add(typeAsignar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 240, -1));
 
         jSeparator10.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 140, 240, 10));
+        bg.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 240, 10));
 
         dayText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         dayText.setText("Cantidad de días: ");
@@ -262,23 +276,51 @@ public class CarAsign extends javax.swing.JInternalFrame {
 
         subtotalText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         subtotalText.setText("SubTotal: ");
-        bg.add(subtotalText, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
+        bg.add(subtotalText, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, -1, -1));
 
         impuestoText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         impuestoText.setText("Impuestos:");
-        bg.add(impuestoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, -1, -1));
+        bg.add(impuestoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, -1, -1));
 
         totalText.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         totalText.setText("Total:");
-        bg.add(totalText, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, -1, -1));
+        bg.add(totalText, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, -1, -1));
 
         subtotalAmount.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         subtotalAmount.setText("0.00");
-        bg.add(subtotalAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, -1, -1));
+        bg.add(subtotalAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 280, -1, -1));
 
         impuestosAmount.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         impuestosAmount.setText("0.00");
-        bg.add(impuestosAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 220, -1, -1));
+        bg.add(impuestosAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        jLabel2.setText("Cedula");
+        bg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+
+        typeID.setBorder(null);
+        bg.add(typeID, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 240, -1));
+
+        jLabel3.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        jLabel3.setText("Precio: ");
+        bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, -1, 20));
+
+        typePrecio.setBorder(null);
+        bg.add(typePrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 200, 240, -1));
+
+        calcBtn.setText("RealizarCalc");
+        calcBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcBtnActionPerformed(evt);
+            }
+        });
+        bg.add(calcBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 140, 30));
+
+        jSeparator11.setForeground(new java.awt.Color(0, 0, 0));
+        bg.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, 240, 10));
+
+        jSeparator12.setForeground(new java.awt.Color(0, 0, 0));
+        bg.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 220, 240, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -300,38 +342,35 @@ public class CarAsign extends javax.swing.JInternalFrame {
 
     private void attendBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendBtnActionPerformed
         // TODO add your handling code here:
-        Solicitud info = null;
-        try {
-             info = soli.obtenerInfo();
-        }catch (Exception e){
-            JOptionPane.showMessageDialog(null, "No hay solicitudes en el sistema...");
-        }
-
-        typeDay.setText(String.valueOf(info.getDiasAlquiler()));
-        typeDay.setForeground(Color.black);
-
-        typeMinPass.setText(String.valueOf(info.getMinimoPasajeros()));
-        typeMinPass.setForeground(Color.black);
-
-        typeMarca.setText(info.getMarca());
-        typeMarca.setForeground(Color.black);
-
-        typeModel.setText(info.getModelo());
-        typeModel.setForeground(Color.black);
-
-        typeYear.setText(info.getAnno());
-        typeYear.setForeground(Color.black);
-
-        typeExtras.setText(info.getExtras());
-        typeExtras.setForeground(Color.black);
-
         soli.atiende();
-
-        try {
-            asignarAreaText.setText(String.valueOf(listaVehiculo));
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se han agregado autos al sistema...");
-        }
+        JOptionPane.showMessageDialog(null, "Se ha atendido "
+                + "una persona, por favor asigne el vehiculo,,,");
+//        Solicitud info = null;
+//        try {
+//             info = soli.obtenerInfo();
+//        }catch (Exception e){
+//            JOptionPane.showMessageDialog(null, "No hay solicitudes en el sistema...");
+//        }
+//
+//        typeDay.setText(String.valueOf(info.getDiasAlquiler()));
+//        typeDay.setForeground(Color.black);
+//
+//        typeMinPass.setText(String.valueOf(info.getMinimoPasajeros()));
+//        typeMinPass.setForeground(Color.black);
+//
+//        typeMarca.setText(info.getMarca());
+//        typeMarca.setForeground(Color.black);
+//
+//        typeModel.setText(info.getModelo());
+//        typeModel.setForeground(Color.black);
+//
+//        typeYear.setText(info.getAnno());
+//        typeYear.setForeground(Color.black);
+//
+//        typeExtras.setText(info.getExtras());
+//        typeExtras.setForeground(Color.black);
+//
+//        soli.atiende();
 
 
     }//GEN-LAST:event_attendBtnActionPerformed
@@ -342,6 +381,16 @@ public class CarAsign extends javax.swing.JInternalFrame {
 
     private void asignBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignBtnActionPerformed
         // TODO add your handling code here:
+        int day = Integer.parseInt(typeDay.getText());
+        String pass = typeMinPass.getText();
+        String marca = typeMarca.getText();
+        String modelo = typeModel.getText();
+        String year = typeYear.getText();
+        String extras = typeExtras.getText();
+        String placa = typeAsignar.getText();
+        String id = typeID.getText();
+        asignar.push(new Asignar(placa,id,"PROCESADA"));
+        asignarAreaText.setText(String.valueOf(asignar));
     }//GEN-LAST:event_asignBtnActionPerformed
 
     private void typeDayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_typeDayMousePressed
@@ -624,6 +673,19 @@ public class CarAsign extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_typeAsignarMousePressed
 
+    private void calcBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcBtnActionPerformed
+        // TODO add your handling code here:
+        double precio = Double.parseDouble(typePrecio.getText()) * Double.parseDouble(typeDay.getText());
+        subtotalAmount.setText(String.valueOf(precio));
+        
+        double impuesto = precio * 0.13;
+        impuestosAmount.setText(String.valueOf(impuesto));
+        
+        double total = precio + impuesto; 
+        totalAmount.setText(String.valueOf(total));
+
+    }//GEN-LAST:event_calcBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton asignBtn;
@@ -631,14 +693,19 @@ public class CarAsign extends javax.swing.JInternalFrame {
     private javax.swing.JLabel asignarText;
     private javax.swing.JButton attendBtn;
     private javax.swing.JPanel bg;
+    private javax.swing.JButton calcBtn;
     private javax.swing.JLabel dayText;
     private javax.swing.JLabel extrasText;
     private javax.swing.JPanel header;
     private javax.swing.JLabel impuestoText;
     private javax.swing.JLabel impuestosAmount;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
@@ -656,9 +723,11 @@ public class CarAsign extends javax.swing.JInternalFrame {
     private javax.swing.JTextField typeAsignar;
     private javax.swing.JTextField typeDay;
     private javax.swing.JTextField typeExtras;
+    private javax.swing.JTextField typeID;
     private javax.swing.JTextField typeMarca;
     private javax.swing.JTextField typeMinPass;
     private javax.swing.JTextField typeModel;
+    private javax.swing.JTextField typePrecio;
     private javax.swing.JTextField typeYear;
     private javax.swing.JLabel yearText;
     // End of variables declaration//GEN-END:variables

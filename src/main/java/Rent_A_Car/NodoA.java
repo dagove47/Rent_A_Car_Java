@@ -22,10 +22,6 @@ public class NodoA {
     */        
     //</editor-fold>
     
-    @Override
-    public String toString(){
-        return alquileres.toString();
-    }
     
     //<editor-fold defaultstate="collapsed" desc="Override">
     /*
@@ -54,4 +50,11 @@ public class NodoA {
     public NodoA(Asignar alquileres) {
         this.alquileres = alquileres;
     }
+
+    @Override
+    public String toString() {
+        return alquileres.toString();
+    }
+    
+    
 }

@@ -1,26 +1,25 @@
 package Rent_A_Car;
 
 public class PilaAsignar {
+
     private NodoA topNodo;
-    
+
     //<editor-fold defaultstate="collapsed" desc="Vacia">
     /*
     * el metodo Vacia fuerza a topNodo 
     * a ser un conjunto vacio.
-    */    
+     */
     //</editor-fold>
-    
-    public boolean vacia(){
-        return this.topNodo==null;
+    public boolean vacia() {
+        return this.topNodo == null;
     }
-    
+
     private int largo;
-    
+
     /*
     * se generan las variables que 
     * se van a usar en esta y otras clases.
-    */
-    
+     */
     //<editor-fold defaultstate="collapsed" desc="Push">
     /*
     * cuando push recibe un "Asignar" lo designa
@@ -33,20 +32,19 @@ public class PilaAsignar {
     * se iguala a newNodo. Finalmente se le añade 
     * 1 a largo para que el codigo sepa que tan
     * larga es la pila.
-    */   
+     */
     //</editor-fold>
-    
-    public void push(Asignar solicitud){
-        NodoA newNodo=new NodoA(solicitud);
-        if(this.topNodo==null){
-            this.topNodo=newNodo;
-        }else {
+    public void push(Asignar solicitud) {
+        NodoA newNodo = new NodoA(solicitud);
+        if (this.topNodo == null) {
+            this.topNodo = newNodo;
+        } else {
             newNodo.setNodoanterior(this.topNodo);
-            this.topNodo=newNodo;
+            this.topNodo = newNodo;
         }
         this.largo++;
     }
-    
+
     //<editor-fold defaultstate="collapsed" desc="listarPila">
     /*
     * se crea un strin llamado listaralquileres
@@ -63,19 +61,21 @@ public class PilaAsignar {
     * de su valor actual. una vez vacia se 
     * vuelve true se presenta  
     * listadealquileres como respuesta.
-    */
+     */
     //</editor-fold>
-    
-    public String listarPila(){
-        String listaalquileres="";
-        int n=1;
+    @Override
+    public String toString() {
+        String listaalquileres = "";
+        int n = 1;
         if (!vacia()) {
-            NodoA aux= this.topNodo;
-            while(aux != null){
-                listaalquileres += n+"-"+ aux.getAlquileres()+"\n";
+            NodoA aux = this.topNodo;
+            while (aux != null) {
+                listaalquileres += n + "-" + aux.getAlquileres() + "\n";
                 n++;
-                aux=aux.getNodoanterior();
+                aux = aux.getNodoanterior();
             }
-        }return listaalquileres;
+        }
+        return listaalquileres;
+
     }
 }
