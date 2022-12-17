@@ -17,14 +17,17 @@ public class CarAsign extends javax.swing.JInternalFrame {
     /**
      * Creates new form CarAsign
      */
-    ListaVehiculo listaVehiculo = new ListaVehiculo();
-    ColaSolicitud soli = new ColaSolicitud();
-    PilaAsignar asignar = new PilaAsignar();
-
+    Clientes cl = new Clientes();
+    Rent r = new Rent();
+    private static PilaAsignar asignar = new PilaAsignar();
     Vehiculos v = new Vehiculos();
 
-    public String imprimeVehiculos(String x) {
-        return x;
+    public PilaAsignar getAsignar() {
+        return this.asignar;
+    }
+
+    public void setAsignar(PilaAsignar asignar) {
+        this.asignar = asignar;
     }
 
     public CarAsign() {
@@ -342,35 +345,44 @@ public class CarAsign extends javax.swing.JInternalFrame {
 
     private void attendBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendBtnActionPerformed
         // TODO add your handling code here:
-        soli.atiende();
-        JOptionPane.showMessageDialog(null, "Se ha atendido "
+
+        Solicitud info = null;
+        try {
+            info = r.getSoli().obtenerInfo();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No hay solicitudes en el sistema...");
+        }
+
+        typeDay.setText(String.valueOf(info.getDiasAlquiler()));
+        typeDay.setForeground(Color.black);
+
+        typeMinPass.setText(String.valueOf(info.getMinimoPasajeros()));
+        typeMinPass.setForeground(Color.black);
+
+        typeMarca.setText(info.getMarca());
+        typeMarca.setForeground(Color.black);
+
+        typeModel.setText(info.getModelo());
+        typeModel.setForeground(Color.black);
+
+        typeYear.setText(info.getAnno());
+        typeYear.setForeground(Color.black);
+
+        typeExtras.setText(info.getExtras());
+        typeExtras.setForeground(Color.black);
+
+        typeID.setText(String.valueOf(info.getCedula()));
+        typeID.setForeground(Color.black);
+
+        JOptionPane.showMessageDialog(null, "Se esta atendiendo a "
                 + "una persona, por favor asigne el vehiculo,,,");
-//        Solicitud info = null;
-//        try {
-//             info = soli.obtenerInfo();
-//        }catch (Exception e){
-//            JOptionPane.showMessageDialog(null, "No hay solicitudes en el sistema...");
-//        }
-//
-//        typeDay.setText(String.valueOf(info.getDiasAlquiler()));
-//        typeDay.setForeground(Color.black);
-//
-//        typeMinPass.setText(String.valueOf(info.getMinimoPasajeros()));
-//        typeMinPass.setForeground(Color.black);
-//
-//        typeMarca.setText(info.getMarca());
-//        typeMarca.setForeground(Color.black);
-//
-//        typeModel.setText(info.getModelo());
-//        typeModel.setForeground(Color.black);
-//
-//        typeYear.setText(info.getAnno());
-//        typeYear.setForeground(Color.black);
-//
-//        typeExtras.setText(info.getExtras());
-//        typeExtras.setForeground(Color.black);
-//
-//        soli.atiende();
+        r.getSoli().atiende();
+
+        try {
+            asignarAreaText.setText(String.valueOf(v.getListaVehiculo()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No hay vehiculos registrados...");
+        }
 
 
     }//GEN-LAST:event_attendBtnActionPerformed
@@ -381,15 +393,21 @@ public class CarAsign extends javax.swing.JInternalFrame {
 
     private void asignBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignBtnActionPerformed
         // TODO add your handling code here:
-        int day = Integer.parseInt(typeDay.getText());
+        int day = 0;
+        
+        day = Integer.parseInt(typeDay.getText());
+        String id = typeID.getText();
+        
+        if (Double.parseDouble(totalAmount.getText()) > 70000) {
+            cl.getListaCliente().categoria(Integer.parseInt(id));
+        }
         String pass = typeMinPass.getText();
         String marca = typeMarca.getText();
         String modelo = typeModel.getText();
         String year = typeYear.getText();
         String extras = typeExtras.getText();
         String placa = typeAsignar.getText();
-        String id = typeID.getText();
-        asignar.push(new Asignar(placa,id,"PROCESADA"));
+        asignar.push(new Asignar(placa, id, "PROCESADA"));
         asignarAreaText.setText(String.valueOf(asignar));
     }//GEN-LAST:event_asignBtnActionPerformed
 
@@ -675,13 +693,19 @@ public class CarAsign extends javax.swing.JInternalFrame {
 
     private void calcBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcBtnActionPerformed
         // TODO add your handling code here:
+        Vehiculo info = v.getListaVehiculo().buscar(typeAsignar.getText());
+        info.setEstado("No Disponible");
+        v.getListaVehiculo().modifica(info);
+
+        typePrecio.setText(String.valueOf(info.getPrecioDia()));
+
         double precio = Double.parseDouble(typePrecio.getText()) * Double.parseDouble(typeDay.getText());
         subtotalAmount.setText(String.valueOf(precio));
-        
+
         double impuesto = precio * 0.13;
         impuestosAmount.setText(String.valueOf(impuesto));
-        
-        double total = precio + impuesto; 
+
+        double total = precio + impuesto;
         totalAmount.setText(String.valueOf(total));
 
     }//GEN-LAST:event_calcBtnActionPerformed

@@ -21,7 +21,17 @@ public class Clientes extends javax.swing.JInternalFrame {
         initComponents();
     }
 
-    static ListaCliente listaCliente = new ListaCliente();
+    private static ListaCliente listaCliente = new ListaCliente();
+
+    public  ListaCliente getListaCliente() {
+        return this.listaCliente;
+    }
+
+    public  void setListaCliente(ListaCliente listaCliente) {
+        this.listaCliente = listaCliente;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
