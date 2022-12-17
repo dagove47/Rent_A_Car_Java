@@ -209,6 +209,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         bg.add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 270, 50));
 
         deleteBtn.setText("Eliminar Cliente");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
         bg.add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 270, 50));
 
         textClients.setColumns(20);
@@ -483,6 +488,25 @@ public class Clientes extends javax.swing.JInternalFrame {
         lvOptions.setSelectedItem(buscado.getCategoria());
 
     }//GEN-LAST:event_searchBtnActionPerformed
+
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        // TODO add your handling code here:
+        listaCliente.elimina(Integer.parseInt(typeId.getText()));
+
+        typeName.setText("Ingrese el nombre completo del cliente");
+        typeName.setForeground(Color.gray);
+
+        typeBirth.setText("Ingrese el ID card del cliente");
+        typeBirth.setForeground(Color.gray);
+
+        typeEmail.setText("Ingrese la fecha de nacimiento");
+        typeEmail.setForeground(Color.gray);
+
+        typeId.setText("example@gmail.com");
+        typeId.setForeground(Color.gray);
+
+        textClients.setText(String.valueOf(listaCliente));
+    }//GEN-LAST:event_deleteBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

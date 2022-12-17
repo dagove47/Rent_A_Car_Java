@@ -96,19 +96,21 @@ public class ListaCliente {
     public void modifica(Cliente p) {
         // Busca a si existe alguien con cedula, y le actualiza el nombre
         if (cabeza != null) {
-            // Si hay algo en la lista buscaré
-            NodoC aux = cabeza;
-            // utilizo aux como indice
-            // Mientras no se acabe la lista y el elemento
-            // de la lista sea menor que el buscado
-            while (aux != null && aux.getDato().getCedula() < p.getCedula()) {
-                aux = aux.getNext();
-                // Se avanza la lista
+            //Si hay algo en la lista buscaré
+            NodoC aux = cabeza; //utilizo aux como indice
+            //Mientras no se acabe la lista y el elemento
+            //de la lista sea menor que el buscado
+            while (aux != null && !(aux.getDato().getCedula() == p.getCedula())) {
+                aux = aux.getNext(); //avanzo en la lista
             }
             // Si lo encuentra hago el cambio
-            if (aux != null && aux.getDato().getCedula() == p.getCedula()) {
-                // Solo básta cambiar nombre
+            if (aux != null && (aux.getDato().getCedula() == p.getCedula())) {
+                //Solo básta cambiar nombre
+                
                 aux.getDato().setNombre(p.getNombre());
+                aux.getDato().setNacimiento(p.getNacimiento());
+                aux.getDato().setEmail(p.getEmail());
+                aux.getDato().setCategoria(p.getCategoria());
             }
         }
     }
@@ -167,14 +169,14 @@ public class ListaCliente {
         }
         return p;
     }
-    
-    public void categoria(int  id) {
+
+    public void categoria(int id) {
         if (cabeza != null) {
             NodoC aux = cabeza;
             while (aux != null && aux.getDato().getCedula() != id) {
                 aux = aux.getNext();
             }
-            if (aux != null && aux.getDato().getCedula() == id ) {
+            if (aux != null && aux.getDato().getCedula() == id) {
                 switch (aux.getDato().getCategoria()) {
                     case "BRONCE":
                         aux.getDato().setCategoria("PLATA");
@@ -192,7 +194,7 @@ public class ListaCliente {
         }
     }
 
-    public Cliente buscar(int  id) {
+    public Cliente buscar(int id) {
         if (cabeza != null) {
 
             NodoC aux = cabeza;
@@ -202,7 +204,7 @@ public class ListaCliente {
 
             }
 
-            if (aux != null && aux.getDato().getCedula() == id ) {
+            if (aux != null && aux.getDato().getCedula() == id) {
                 buscado = aux.getDato();
             }
         }
@@ -231,6 +233,5 @@ public class ListaCliente {
         }
         return s;
     }
-    
-    
+
 }

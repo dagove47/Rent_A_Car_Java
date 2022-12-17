@@ -36,48 +36,6 @@ public class Vehiculos extends javax.swing.JInternalFrame {
 
     public Vehiculos() {
         initComponents();
-        infoTable.getTableHeader().setFont(new Font("Roboto Light", Font.BOLD, 14));
-        infoTable.getTableHeader().setOpaque(false);
-        infoTable.getTableHeader().setBackground(new Color(32, 136, 203));
-        infoTable.getTableHeader().setForeground(new Color(255, 255, 255));
-        infoTable.setRowHeight(25);
-
-        modelo = new DefaultTableModel();
-        modelo.addColumn("Placa");
-        modelo.addColumn("Marca");
-        modelo.addColumn("Modelo");
-        modelo.addColumn("Year");
-        modelo.addColumn("Color");
-        modelo.addColumn("Cilindrada");
-        modelo.addColumn("Combustible");
-        modelo.addColumn("Pasajeros");
-        modelo.addColumn("Precio");
-        modelo.addColumn("Extras");
-        modelo.addColumn("Estado");
-
-        this.infoTable.setModel(modelo);
-
-        this.infoTable.setModel(modelo);
-    }
-
-    public void nuevaTabla() {
-
-        String[] datos = new String[11];
-
-        datos[0] = listaVehiculo.placa();
-        datos[1] = listaVehiculo.marca();
-        datos[2] = listaVehiculo.modelo();
-        datos[3] = String.valueOf(listaVehiculo.year());
-        datos[4] = listaVehiculo.color();
-        datos[5] = listaVehiculo.cilindrada();
-        datos[6] = listaVehiculo.combustible();
-        datos[7] = String.valueOf(listaVehiculo.pasajeros());
-        datos[8] = String.valueOf(listaVehiculo.precioDia());
-        datos[9] = listaVehiculo.extras();
-        datos[10] = listaVehiculo.estado();
-
-        modelo.addRow(datos);
-
     }
 
     /**
@@ -129,8 +87,8 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         updateBtn = new javax.swing.JButton();
         typeSearch = new javax.swing.JTextField();
         searchBtn = new javax.swing.JButton();
-        table = new javax.swing.JScrollPane();
-        infoTable = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        carArea = new javax.swing.JTextArea();
 
         setPreferredSize(new java.awt.Dimension(910, 690));
 
@@ -433,35 +391,11 @@ public class Vehiculos extends javax.swing.JInternalFrame {
         });
         bg.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, 80, 40));
 
-        table.setBorder(null);
+        carArea.setColumns(20);
+        carArea.setRows(5);
+        jScrollPane1.setViewportView(carArea);
 
-        infoTable.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        infoTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Placa", "Marca", "Modelo", "Year", "Color", "Cilindrada", "Combustible", "Pasajeros", "Precio ", "Extras", "Estado"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        infoTable.setFocusable(false);
-        infoTable.setRowHeight(25);
-        infoTable.setSelectionBackground(new java.awt.Color(232, 57, 95));
-        infoTable.setSelectionForeground(new java.awt.Color(255, 255, 255));
-        infoTable.setShowGrid(false);
-        infoTable.setShowHorizontalLines(true);
-        infoTable.getTableHeader().setReorderingAllowed(false);
-        table.setViewportView(infoTable);
-
-        bg.add(table, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 890, 200));
+        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 920, 210));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -523,7 +457,8 @@ public class Vehiculos extends javax.swing.JInternalFrame {
                 Integer.parseInt(typeEspacios.getText()), Integer.parseInt(typeDayCost.getText()),
                 typeExtras.getText(), String.valueOf(statusCombo.getSelectedItem())));
 
-        nuevaTabla();
+        carArea.setText(String.valueOf(listaVehiculo));
+
         typePlaca.setText("409425");
         typePlaca.setForeground(Color.gray);
 
@@ -561,7 +496,7 @@ public class Vehiculos extends javax.swing.JInternalFrame {
                 Integer.parseInt(typeEspacios.getText()), Integer.parseInt(typeDayCost.getText()),
                 typeExtras.getText(), String.valueOf(statusCombo.getSelectedItem())));
 
-        nuevaTabla();
+        carArea.setText(String.valueOf(listaVehiculo));
 
         typePlaca.setText("409425");
         typePlaca.setForeground(Color.gray);
@@ -601,7 +536,8 @@ public class Vehiculos extends javax.swing.JInternalFrame {
                 Integer.parseInt(typeEspacios.getText()), Integer.parseInt(typeDayCost.getText()),
                 typeExtras.getText(), String.valueOf(statusCombo.getSelectedItem())));
 
-        nuevaTabla();
+        carArea.setText(String.valueOf(listaVehiculo));
+
         typePlaca.setText("409425");
         typePlaca.setForeground(Color.gray);
 
@@ -1238,6 +1174,7 @@ public class Vehiculos extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
+    private javax.swing.JTextArea carArea;
     private javax.swing.JLabel ccText;
     private javax.swing.JLabel colorText;
     private javax.swing.JLabel dayCostText;
@@ -1247,8 +1184,8 @@ public class Vehiculos extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> gasCombo;
     private javax.swing.JLabel gasText;
     private javax.swing.JPanel header;
-    private javax.swing.JTable infoTable;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
@@ -1265,7 +1202,6 @@ public class Vehiculos extends javax.swing.JInternalFrame {
     private javax.swing.JButton searchBtn;
     private javax.swing.JComboBox<String> statusCombo;
     private javax.swing.JLabel statusText;
-    private javax.swing.JScrollPane table;
     private javax.swing.JLabel tittle;
     private javax.swing.JTextField typeCC;
     private javax.swing.JTextField typeColor;

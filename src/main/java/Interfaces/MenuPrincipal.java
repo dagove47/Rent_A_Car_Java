@@ -20,9 +20,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     int xPos, yPos;
 
     ListaVehiculo listaVehiculo = new ListaVehiculo();
-    ColaSolicitud solicitud = new ColaSolicitud();
-    ListaCliente clients = new ListaCliente();
-    PilaAsignar asignado = new PilaAsignar();
+    Rent r = new Rent();
+    Clientes c = new Clientes();
+    Vehiculos v = new Vehiculos();
+    AnalisisDatos a = new AnalisisDatos();
+    CarAsign ca = new CarAsign();
+    Devoluciones d = new Devoluciones();
 
     public MenuPrincipal() {
         initComponents();
@@ -454,7 +457,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void clientTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientTextMouseClicked
         // TODO add your handling code here:
-        Clientes c = new Clientes();
         c.setSize(950, 690);
         c.setLocation(0, 0);
 
@@ -480,7 +482,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void carTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carTextMouseClicked
         // TODO add your handling code here:
-        Vehiculos v = new Vehiculos();
         v.setListaVehiculo(listaVehiculo);
         v.setSize(950, 690);
         v.setLocation(0, 0);
@@ -507,7 +508,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void rentTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rentTextMouseClicked
         // TODO add your handling code here:
-        Rent r = new Rent();
         r.setSize(950, 690);
         r.setLocation(0, 0);
 
@@ -533,7 +533,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void graphicsTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_graphicsTextMouseClicked
         // TODO add your handling code here:
-        AnalisisDatos a = new AnalisisDatos();
         a.setSize(950, 690);
         a.setLocation(0, 0);
 
@@ -559,22 +558,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void asignarTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignarTextMouseClicked
         // TODO add your handling code here:
-        CarAsign a = new CarAsign();
-        a.setSize(950, 690);
-        a.setLocation(0, 0);
+        ca.setSize(950, 690);
+        ca.setLocation(0, 0);
 
         subMenu.removeAll();
-        subMenu.add(a, BorderLayout.CENTER);
+        subMenu.add(ca, BorderLayout.CENTER);
         subMenu.revalidate();
         subMenu.repaint();
 
-        a.setVisible(true);
+        ca.setVisible(true);
 
     }//GEN-LAST:event_asignarTextMouseClicked
 
     private void devolTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_devolTextMouseClicked
         // TODO add your handling code here:
-        Devoluciones d = new Devoluciones();
         d.setSize(950, 690);
         d.setLocation(0, 0);
 

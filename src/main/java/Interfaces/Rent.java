@@ -16,11 +16,11 @@ public class Rent extends javax.swing.JInternalFrame {
     /**
      * Creates new form Rent
      */
+    ColaSolicitud soli = new ColaSolicitud();
+
     public Rent() {
         initComponents();
     }
-
-    ColaSolicitud soli = new ColaSolicitud();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -301,12 +301,31 @@ public class Rent extends javax.swing.JInternalFrame {
         String year = typeYear.getText();
         String extras = typeExtras.getText();
 
-        soli.encola(new Solicitud(id,dias, pass, 
+        soli.encola(new Solicitud(id, dias, pass,
                 marca, modelo, year, extras, "Registrada"));
 
         soliAreaText.setText(String.valueOf(soli));
-        
-        
+
+        typeID.setText("108950700");
+        typeID.setForeground(Color.gray);
+
+        typeDay.setText("14");
+        typeDay.setForeground(Color.gray);
+
+        typeMinPass.setText("5");
+        typeMinPass.setForeground(Color.gray);
+
+        typeMarca.setText("Hyundai");
+        typeMarca.setForeground(Color.gray);
+
+        typeModel.setText("Accent");
+        typeModel.setForeground(Color.gray);
+
+        typeYear.setText("2023");
+        typeYear.setForeground(Color.gray);
+
+        typeExtras.setText("Camara, asientos de cuero, sensores");
+        typeExtras.setForeground(Color.gray);
 
 
     }//GEN-LAST:event_addBtnActionPerformed
