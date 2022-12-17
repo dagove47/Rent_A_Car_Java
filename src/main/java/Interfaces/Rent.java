@@ -17,6 +17,7 @@ public class Rent extends javax.swing.JInternalFrame {
      * Creates new form Rent
      */
     static ColaSolicitud soli = new ColaSolicitud();
+    static ListaCliente listaCliente = new  ListaCliente();
 
     public Rent() {
         initComponents();
@@ -302,8 +303,9 @@ public class Rent extends javax.swing.JInternalFrame {
         String year = typeYear.getText();
         String extras = typeExtras.getText();
 
-        soli.encola(new Solicitud(id, dias, pass,
-                marca, modelo, year, extras, "Registrada"));
+        soli.encola(new Solicitud(id, dias, 
+                pass,marca, modelo, year, extras,
+                "Registrada", listaCliente.buscarCategoria(id)));
 
         soliAreaText.setText(String.valueOf(soli));
 

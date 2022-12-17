@@ -184,7 +184,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         lvText.setText("Categoría: ");
         bg.add(lvText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
 
-        lvOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bronce", "Plata", "Oro", "Zafiro" }));
+        lvOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BRONZE", "PLATA", "ORO", "ZAFIRO" }));
         lvOptions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lvOptionsActionPerformed(evt);
